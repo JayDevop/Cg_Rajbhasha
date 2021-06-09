@@ -1,0 +1,6 @@
+ERROR - 2020-07-25 18:21:59 --> Severity: Notice --> Undefined variable: samuhData_notify X:\xampp\htdocs\cm_git\application\models\Api_Baadi_Model.php 1016
+ERROR - 2020-07-25 18:21:59 --> Severity: Notice --> Undefined variable: samuhMembers_notify X:\xampp\htdocs\cm_git\application\models\Api_Baadi_Model.php 1016
+ERROR - 2020-07-25 18:31:23 --> Severity: Notice --> Undefined index: status X:\xampp\htdocs\cm_git\application\controllers\APInggb\Api_Baadi.php 664
+ERROR - 2020-07-25 18:32:10 --> Query error: Unknown column 'farmer_id_ssqllite' in 'field list' - Invalid query: INSERT INTO `work_info_farmer_badi` (`farmer_id_ssqllite`, `farmer_name_en`, `beej_witran_kg`, `paudha_witran_qty`, `wid`, `work_name`, `yojna_name`, `is_synced`, `Status`, `created_date_time_sqllite`, `cmd`, `mobile_created_by`, `created_by`, `ipaddress`, `flag_entry`) VALUES (1, 'kisan singh', '55', '55', 2, '1', '1', 0, 0, '09-Jul-2020 01:31:36', 'CR', 16613, '29712', '::1', 'new_app')
+ERROR - 2020-07-25 18:32:10 --> Severity: Notice --> Undefined variable: error X:\xampp\htdocs\cm_git\application\models\Api_Baadi_Model.php 1000
+ERROR - 2020-07-25 18:32:10 --> Severity: Notice --> Undefined variable: error X:\xampp\htdocs\cm_git\application\models\Api_Baadi_Model.php 1001
