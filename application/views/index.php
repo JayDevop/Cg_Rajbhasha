@@ -1,33 +1,30 @@
 <main id="main" style="margin-top: 80px;">
-    <!-- <h1>hello</h1> -->
-    <div id="demo" class="carousel slide" data-ride="carousel" data-interval="4500">
-
-      <ul class="carousel-indicators">
-        <li data-target="#demo" data-slide-to="0" class="active"></li>
-        <li data-target="#demo" data-slide-to="1"></li>
-        <li data-target="#demo" data-slide-to="2"></li>
-      </ul>
-      
-
-      
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="./assets/img/Images/rajbhasha_one.jpg" alt="a" class="d-block w-100" >
-        </div>
-        <div class="carousel-item">
-          <img src="./assets/img/Images/rajbhasha_two.jpg" alt="b" class="d-block w-100" >
-        </div>
-        <div class="carousel-item">
-          <img src="./assets/img/Images/rajbhasha_three.jpg" alt="c"class="d-block w-100">
-        </div>
-      </div>
-      
-      <a class="carousel-control-prev" href="#demo" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-      </a>
-      <a class="carousel-control-next" href="#demo" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-      </a>
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-interval="4500">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-  </main>
-  <!-- End #main -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="./assets/img/Images/rajbhasha_one.jpg" class="d-block w-100" alt="a">
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/img/Images/rajbhasha_two.jpg" class="d-block w-100" alt="b">
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/img/Images/rajbhasha_three.jpg" class="d-block w-100" alt="c">
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</main>
+<!-- End #main -->
