@@ -37,7 +37,7 @@ class Home extends MY_Controller {
                 $password = $this->input->post('password');
                 $login_resp = $this->Home_model->get_login($username,$password);
                 if($login_resp['status'] === TRUE) {
-                    print_r($login_resp);exit;
+                   //print_r($login_resp);exit;
                     $session_array = array('user_id'=>$login_resp['data'][0]['login_id'],'username'=>$login_resp['data'][0]['username'],
                                             'role_id'=>$login_resp['data'][0]['role_id'],'role_name'=>$login_resp['data'][0]['role_name'],
                                             'role_type'=>$login_resp['data'][0]['role_type'],'is_admin'=>$login_resp['data'][0]['is_admin'],
@@ -70,7 +70,7 @@ class Home extends MY_Controller {
     /* Role Wise User Redirection Method Start */
     public function role_wise_redirection() {
         if ($this->session->userdata('role_id') == 4) { // 1 For CEO 
-            redirect(base_url('admin-dashboard'), "refresh");
+            redirect(base_url('adminpoint/admin-dashboard'), "refresh");
         // }else if($this->session->userdata('role_id') == 2) { // 2 For ACEO 
         //     redirect(base_url('aceo-dashboard'), "refresh");
         // }else if($this->session->userdata('role_id') == 3) { // 3 For CashCounter 

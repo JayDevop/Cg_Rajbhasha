@@ -10,9 +10,9 @@ class AdminDashboardController extends CI_Controller
         $this->load->model('AdminDashboardModel');
         $this->load->model('CommonModel');
         $this->data = array();
-        if ($this->session->userdata('role_id') != 4) { // 4 For Admin 
-            base_url('logout');
-        }
+        // if ($this->session->userdata('role_id') != 4) { // 4 For Admin 
+        //     base_url('logout');
+        // }
     }
 
     
