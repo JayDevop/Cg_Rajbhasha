@@ -4,6 +4,9 @@ $route['default_controller'] = 'Dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['login'] = 'Dashboard/log_in';
+$route['(?i)logout'] = 'LoginController/logout';
+
 $route['(?i)Home'] = 'Dashboard/index';
 $route['(?i)Home-Hindi'] = 'Dashboard/dashboard_hindi';
 $route['(?i)About-Organisation'] = 'Dashboard/organisation';
