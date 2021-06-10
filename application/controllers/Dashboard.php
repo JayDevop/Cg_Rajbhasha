@@ -70,7 +70,7 @@ class Dashboard extends MY_Controller {
     /* Role Wise User Redirection Method Start */
     public function role_wise_redirection() {
         if ($this->session->userdata('role_id') == 4) { // 1 For CEO 
-            redirect(base_url('default_controller'), "refresh");
+            redirect(base_url('admin-dashboard'), "refresh");
         // }else if($this->session->userdata('role_id') == 2) { // 2 For ACEO 
         //     redirect(base_url('aceo-dashboard'), "refresh");
         // }else if($this->session->userdata('role_id') == 3) { // 3 For CashCounter 
