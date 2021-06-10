@@ -12,13 +12,13 @@
       
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="./assets/img/Images/rajbhasha_one.jpg" alt="a" >
+          <img src="./assets/img/Images/rajbhasha_one.jpg" alt="a" class="d-block w-100" >
         </div>
         <div class="carousel-item">
-          <img src="./assets/img/Images/rajbhasha_two.jpg" alt="b" >
+          <img src="./assets/img/Images/rajbhasha_two.jpg" alt="b" class="d-block w-100" >
         </div>
         <div class="carousel-item">
-          <img src="./assets/img/Images/rajbhasha_three.jpg" alt="c">
+          <img src="./assets/img/Images/rajbhasha_three.jpg" alt="c"class="d-block w-100">
         </div>
       </div>
       
