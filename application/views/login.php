@@ -112,20 +112,11 @@ input[type="password"] {
 <div class="card">
    <form action="<?= base_url('login'); ?>" method="post">
         <div class="row>">
-       
-        <!-- <img class="logo me-auto" style= "width: 100%; height: -50%;" src="<?=base_url()?>assets/img/logo.png"></a> -->
-        
-       
-        <h2 class="title">लॉग इन करें</h2>
-        
-        
+       <!-- <img class="logo me-auto" style= "width: 100%; height: -50%;" src="<?=base_url()?>assets/img/logo.png"></a> --> 
+      <h2 class="title">लॉग इन करें</h2>
       <p class="subtitle">खाता नहीं है? <a href="#">साइन अप करें</a></p>
         </div>
-     
-
-     
-
-      <p class="or"><span>या</span></p>
+        <p class="or"><span>या</span></p>
 
       <div class="email-login">
          <label for="email"> <b>यूज़र आईडी</b></label>

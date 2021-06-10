@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dashboard extends MY_Controller {
+class Home extends MY_Controller {
 
     public $data;
     function __construct() {
         parent::__construct();
         date_default_timezone_set('Asia/Kolkata');
-       $this->load->model('Dashboard_model');  
+       $this->load->model('Home_model');  
         $this->data = array();
     }
 
@@ -35,9 +35,9 @@ class Dashboard extends MY_Controller {
                 
                 $username = $this->input->post('username');
                 $password = $this->input->post('password');
-                $login_resp = $this->Dashboard_model->get_login($username,$password);
+                $login_resp = $this->Home_model->get_login($username,$password);
                 if($login_resp['status'] === TRUE) {
-                    //print_r($login_resp);
+                    print_r($login_resp);exit;
                     $session_array = array('user_id'=>$login_resp['data'][0]['login_id'],'username'=>$login_resp['data'][0]['username'],
                                             'role_id'=>$login_resp['data'][0]['role_id'],'role_name'=>$login_resp['data'][0]['role_name'],
                                             'role_type'=>$login_resp['data'][0]['role_type'],'is_admin'=>$login_resp['data'][0]['is_admin'],
