@@ -116,24 +116,24 @@ input[type="password"] {
         <!-- <img class="logo me-auto" style= "width: 100%; height: -50%;" src="<?=base_url()?>assets/img/logo.png"></a> -->
         
        
-        <h2 class="title">Log in</h2>
+        <h2 class="title">लॉग इन करें</h2>
         
         
-      <p class="subtitle">Don't have an account? <a href="#"> sign Up</a></p>
+      <p class="subtitle">खाता नहीं है? <a href="#">साइन अप करें</a></p>
         </div>
      
 
      
 
-      <p class="or"><span>or</span></p>
+      <p class="or"><span>या</span></p>
 
       <div class="email-login">
-         <label for="email"> <b>User Id</b></label>
-         <input type="text" placeholder="Enter User Id" name="username" required>
+         <label for="email"> <b>यूज़र आईडी</b></label>
+         <input type="text" placeholder="उपयोगकर्ता आईडी दर्ज करें" name="username" required>
          <label for="psw"><b>Password</b></label>
-         <input type="password" placeholder="Enter Password" name="password" required>
+         <input type="password" placeholder="पास वर्ड दर्ज करें" name="password" required>
       </div>
-      <button type = "submit" class="cta-btn">Log In</button>
-      <a class="forget-pass" href="#">Forgot password?</a>
+      <button type = "submit" class="cta-btn">लॉग इन करें</button>
+      <a class="forget-pass" href="#">पासवर्ड भूल गए?</a>
    </form>
 </div>
