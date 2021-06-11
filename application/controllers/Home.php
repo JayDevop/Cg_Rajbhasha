@@ -22,10 +22,10 @@ class Home extends MY_Controller {
 
        /* Login and Logout Function Start */ 
     public function login() {
-        if ($this->session->userdata('user_logged') != null) {
-            redirect(base_url('admin-dashboard'));
+        if ($this->session->userdata('user_id') != null) {
+            redirect(base_url('adminpoint/admin-dashboard'));
         }else if(isset($_POST) && !empty($_POST)) {
-            //print_r($_POST);exit;
+            // print_r($_POST);exit;
            
             $this->data['title'] = 'Rajbhasha | Admin Login';
             $this->form_validation->set_rules('username', 'Username', 'required|trim|stripslashes');

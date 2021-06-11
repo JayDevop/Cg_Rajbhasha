@@ -10,9 +10,10 @@ class AdminDashboardController extends CI_Controller
         $this->load->model('AdminDashboardModel');
         $this->load->model('CommonModel');
         $this->data = array();
-        // if ($this->session->userdata('role_id') != 4) { // 4 For Admin 
-        //     base_url('logout');
-        // }
+        if ($this->session->userdata('user_id') == null) { // 4 For Admin 
+            $this->session->set_flashdata("error", 'Please login');
+            redirect(base_url('../login'));
+        }
     }
 
     
@@ -68,6 +69,11 @@ class AdminDashboardController extends CI_Controller
     }
 
 
+    public function manage_about(){
+        $data = array();
+        $data['title'] = 'Manage about page | CG RajBhasha';
+        $this->render_view('manage_about', $data);
+    }
 
 
     private function render_view($view, $data)
