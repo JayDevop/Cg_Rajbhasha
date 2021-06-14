@@ -3,6 +3,10 @@
 class AdminDashboardController extends CI_Controller
 {
 
+    public $upload_url = "C:/xampp/htdocs/git/Cg_Rajbhasha/";
+    //public $upload_url = "E:/xampp/htdocs/Cg_Rajbhasha/";
+   // public $upload_url ="http://cgrajbhasha.cgstate.gov.in/";
+
     function __construct()
     {
         parent::__construct();
@@ -68,6 +72,35 @@ class AdminDashboardController extends CI_Controller
         echo "<script>location.replace(document.referrer);</script>";
     }
 
+    public function photo_upload_insert()
+    {
+        $pGalleryData['caption_name'] = $_POST['caption_name'];
+        $pGalleryData['original_file_name'] = $_FILES['file']['name'][0];
+        $pGalleryData['user_id'] = $this->session->userdata('user_id');
+        $pGalleryData['system_ip'] = $_SERVER['SERVER_ADDR'];
+       if (!file_exists($this->upload_url."assets/uploads")) {
+
+        mkdir($this->upload_url."assets/uploads", 0777);
+    }
+        $file_directory = $this->upload_url."assets/uploads/photo_gallery";
+    
+        if (!file_exists($file_directory)) {
+            mkdir($file_directory);
+        }
+        $name = "file";
+        $path = $file_directory;
+        $photo_file_response = $this->upload($name, $path);
+        $sts = FALSE;
+        $sts = $this->AdminDashboardModel->photo_gallery_upload_insert($pGalleryData, $photo_file_response);
+
+        if ($sts) {
+            echo "<script>alert('Photo Gallery Uploaded succesfully..')</script>";
+        } else {
+            echo "<script>alert('Try Again.');</script>";
+        }
+        echo "<script>location.replace(document.referrer);</script>";
+        }
+
 
     public function manage_pages($contentid = 0){
         $data = array();
@@ -100,6 +133,14 @@ class AdminDashboardController extends CI_Controller
         }
         $data['pageList'] = $this->AdminDashboardModel->page_list();
         $this->render_view('manage_pages', $data, $js_page);
+    }
+
+    public function photo_gallery(){
+        $data = array();
+        $data['title'] = 'Photo Gallery Add | CG RajBhasha';
+        $js_page = "admin_includes/custom_js_page";
+        $data['photoList'] = $this->AdminDashboardModel->photo_gallery_list();
+        $this->render_view('add_photo_gallery', $data, $js_page);
     }
 
     public function content_list($delete = 0){
