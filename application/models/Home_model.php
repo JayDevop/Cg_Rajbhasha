@@ -82,5 +82,16 @@ class Home_model extends CI_Model
         return $result_data;
     } 
     /* Get User Login Start */
+
+     /* Photo Gallery list */
+     public function photo_gallery_list(){
+        $sql = "SELECT tp.photo_id photo_id,tp.caption_name caption_name,tp.original_file_name,tp.uploaded_file_name uploaded_file_name ,tp.file_url,tp.created_datetime posted_on 
+        from  tbl_photo_gallery tp ORDER BY tp.photo_id Desc";
+        $return = $this->db->query($sql);
+        //echo $this->db->last_query();exit;
+        $return_list = $return->result_array();
+        return $return_list;
+    }
+/* Photo Gallery list  */
 }
 ?>

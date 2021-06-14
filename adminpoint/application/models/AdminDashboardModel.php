@@ -9,26 +9,27 @@ class AdminDashboardModel extends CI_Model
         date_default_timezone_set('Asia/Kolkata');
     }
 
-    /* Tender Upload.*/
-    public function tender_upload_insert($tenderData, $tender_file)
+    /* Photo Gallery Upload.*/
+    public function photo_gallery_upload_insert($pGalleryData, $photo_file_response)
     {
         //print_r($tender_file[0]);exit();
-        if ($tender_file != null && $tender_file != '') {
+        if ($photo_file_response != null && $photo_file_response != '') {
             $this->db->trans_begin();
-            $count = sizeof($tender_file);
+            $count = sizeof($photo_file_response);
             if ($count > 0) {
                 $parameters = array(
-                    'tender_name' => $tenderData['tender_name'],
-                    'tender_type' => $tenderData['upload_type'],
-                    'tender_closing_date' => $tenderData['closing_date'],
-                    'file_name' => $tender_file[0]['file_name'],
-                    'file_url' => $tender_file[0]['full_path'],
-                    'file_type' => $tender_file[0]['file_type'],
-                    'ip_address' => $tenderData['system_ip']
+                    'caption_name' => $pGalleryData['caption_name'],
+                    'original_file_name' => $pGalleryData['original_file_name'],
+                    'uploaded_file_name' => $photo_file_response[0]['file_name'],
+                    'file_url' => $photo_file_response[0]['full_path'],
+                    'file_type' => $photo_file_response[0]['file_type'],
+                    'file_size' => $photo_file_response[0]['file_size'],
+                    'ip_address' => $pGalleryData['system_ip'],
+                    'created_by' => $pGalleryData['user_id']
                 );
 
-                $this->db->insert('tbl_tender', $parameters);
-                // echo $this->db->last_query();
+                $this->db->insert('tbl_photo_gallery', $parameters);
+                //echo $this->db->last_query();exit();
                 // exit;
             }
         }
@@ -41,7 +42,19 @@ class AdminDashboardModel extends CI_Model
         }
         return $sts;
     }
-    /* Tender Upload. */
+    /* Photo Gallery Upload */
+    
+    
+     /* Photo Gallery list */
+  public function photo_gallery_list(){
+          $sql = "SELECT tp.photo_id photo_id,tp.caption_name caption_name,tp.original_file_name,tp.file_url 
+          from  tbl_photo_gallery tp ORDER BY tp.photo_id Desc";
+          $return = $this->db->query($sql);
+          //echo $this->db->last_query();exit;
+          $return_list = $return->result_array();
+          return $return_list;
+      }
+  /* Photo Gallery list  */
 
 
     /* Page list */

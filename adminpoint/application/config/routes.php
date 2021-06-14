@@ -18,6 +18,8 @@ $route['manage-pages'] = 'AdminDashboardController/manage_pages';
 $route['manage-pages/(:any)'] = 'AdminDashboardController/manage_pages/$1';
 $route['content-list'] = 'AdminDashboardController/content_list';
 $route['content-list/(:num)'] = 'AdminDashboardController/content_list/$1';
+$route['(?i)photo-gallery'] = 'AdminDashboardController/photo_gallery';
+$route['(?i)photo-upload-insert'] = 'AdminDashboardController/photo_upload_insert';
 /* Admin Routes Start */  
 
 /* Ajax Start */  

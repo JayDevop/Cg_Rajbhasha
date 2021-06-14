@@ -52,6 +52,14 @@
                                 </a>
                             </li>
 
+                            <li>
+                                <a href="<?php echo base_url('photo-gallery'); ?>">
+                                    <i class="uil-photo-alt"></i>
+                                    <span>Photo Gallery</span>
+                                </a>
+                            </li>
+
+
                         </ul>
                     </div>
                     <!-- Sidebar -->
