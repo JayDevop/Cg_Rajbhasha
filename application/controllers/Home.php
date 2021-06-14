@@ -15,6 +15,12 @@ class Home extends MY_Controller {
   	{
       $this->render_view('index',$this->data);
   	}
+
+      public function photo_gallery()
+  	{
+      $this->render_view('photo_gallery',$this->data);
+  	}
+
       public function log_in()
   	{
       $this->login();

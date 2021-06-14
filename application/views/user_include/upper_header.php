@@ -17,6 +17,7 @@
           <li><a href="#">सम्मेलन</a></li>
           <li><a href="#">प्रकाशन</a></li>
           <li><a href="#">अनुदान</a></li>
+          <li><a href="<?=base_url('photo-gallery')?>">फोटो ग़ैलरी</a></li>
           <li><a href="#"> वेबिनार</a></li>
           <li><a href="#">संपर्क</a></li>
           <li><a href="<?=base_url('adminpoint/login')?>">लॉग इन</a></li>
