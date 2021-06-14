@@ -19,7 +19,7 @@
           <li><a href="#">अनुदान</a></li>
           <li><a href="#"> वेबिनार</a></li>
           <li><a href="#">संपर्क</a></li>
-          <li><a href="<?=base_url('login')?>">लॉग इन</a></li>
+          <li><a href="<?=base_url('adminpoint/login')?>">लॉग इन</a></li>
         </ul>
 
         <i class="bi bi-list mobile-nav-toggle"></i>
