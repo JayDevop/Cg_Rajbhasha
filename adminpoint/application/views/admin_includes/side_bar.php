@@ -39,16 +39,10 @@
                             </li>
 
                             <li>
-                                <a href="javascript: void(0);" class="has-arrow waves-effect">
+                                <a href="<?php echo base_url('manage-pages'); ?>" class="waves-effect">
                                     <i class="uil-window-section"></i>
                                     <span>Manage pages</span>
                                 </a>
-                                <ul class="sub-menu" aria-expanded="true">
-                                    <li>
-                                        <a href="<?php echo base_url('manage-about'); ?>">About Us</a>
-                                    </li>
-                                    
-                                </ul>
                             </li>
 
                         </ul>

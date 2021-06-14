@@ -42,4 +42,20 @@ class AdminDashboardModel extends CI_Model
         return $sts;
     }
     /* Tender Upload. */
+
+
+    /* Page list */
+    public function page_list($case = '', $pageid = 0){
+        switch($case){
+            case 1:
+                return $this->db->get_where('page_contents', array('fk_pages_id', $pageid))->row_array();
+            break;
+
+            default:
+                return $this->db->get('pages')->result_array();
+            break;
+        }
+
+    }
+    /* Page list */
 }

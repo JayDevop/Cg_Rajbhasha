@@ -19,6 +19,6 @@
         <!-- App Css-->
         <link href="<?=base_url()?>assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" />
 
-        <script src="https://cdn.ckeditor.com/4.12.1/standard-all/ckeditor.js"></script>
+        <script src="<?=base_url()?>assets/libs/jquery/jquery.min.js"></script>
 
     </head>

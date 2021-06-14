@@ -1,4 +1,15 @@
+<style>
+    #loader{
+        width:100%;
+        height:100%;
+        position:fixed;
+        z-index:9999;
+        background:url("<?php echo base_url('adminassets/img/loader.gif'); ?>") no-repeat center center rgba(0,0,0,0.25);
+    }
+</style>
+
 <body>
+    <div id="loader" style="display: none;"></div>
 
 <!-- <body data-layout="horizontal" data-topbar="colored"> -->
 

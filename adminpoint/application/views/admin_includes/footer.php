@@ -69,7 +69,7 @@
         <div class="rightbar-overlay"></div>
 
         <!-- JAVASCRIPT -->
-        <script src="<?=base_url()?>assets/libs/jquery/jquery.min.js"></script>
+        
         <script src="<?=base_url()?>assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="<?=base_url()?>assets/libs/metismenu/metisMenu.min.js"></script>
         <script src="<?=base_url()?>assets/libs/simplebar/simplebar.min.js"></script>
@@ -83,6 +83,17 @@
         <script src="<?=base_url()?>assets/js/pages/dashboard.init.js"></script>
 
         <script src="<?=base_url()?>assets/js/app.js"></script>
+
+        <!-- ckeditor -->
+        <script src="assets/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+
+        <script>
+        ClassicEditor
+        .create( document.querySelector( '#classic-editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+        </script>
 
 
     </body>

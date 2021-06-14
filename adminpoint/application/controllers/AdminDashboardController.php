@@ -69,20 +69,38 @@ class AdminDashboardController extends CI_Controller
     }
 
 
-    public function manage_about(){
+    public function manage_pages(){
         $data = array();
-        $data['title'] = 'Manage about page | CG RajBhasha';
-        $this->render_view('manage_about', $data);
+        $data['title'] = 'Manage psage | CG RajBhasha';
+        $js_page = "admin_includes/custom_js_page";
+        $data['pageList'] = $this->AdminDashboardModel->page_list();
+        $this->render_view('manage_pages', $data, $js_page);
     }
 
 
-    private function render_view($view, $data)
+    private function render_view($view, $data, $js_page = null)
     {
         $this->load->view('admin_includes/head', $data);
         $this->load->view('admin_includes/side_bar', $data);
         $this->load->view('admin_includes/upper_header', $data);
         $this->load->view($view, $data);
         $this->load->view('admin_includes/footer', $data);
+        /* 
+        *   if want call custom page, for specific reason. 
+        */
+        if (!empty($js_page) && $js_page != null) {
+            $this->load->view($js_page);
+        }
+    }
+
+    public function get_page_content(){
+        $pageid = $this->input->post('pageid');
+        if($pageid){
+            $output = $this->AdminDashboardModel->page_list(1, $pageid);
+            echo json_encode(array('status' => 'success', 'output' => $output));
+        }else{
+            echo json_encode(array('status' => 'failed', 'output' => 'Missing parameter'));
+        }
     }
 
     public function upload($name, $path)
