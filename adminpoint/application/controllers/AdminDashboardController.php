@@ -12,7 +12,7 @@ class AdminDashboardController extends CI_Controller
         $this->data = array();
         if ($this->session->userdata('user_id') == null) { // 4 For Admin 
             $this->session->set_flashdata("error", 'Please login');
-            redirect(base_url('../login'));
+            redirect(base_url('login'));
         }
     }
 

@@ -15,24 +15,24 @@ class LoginController extends CI_Controller {
         $this->login();
     }
 
-    /* Login and Logout Function Start */ 
-    public function login() {
-        if ($this->session->userdata('user_logged') != null) {
+       /* Login and Logout Function Start */ 
+       public function login() {
+        if ($this->session->userdata('user_id') != null) {
             redirect(base_url('admin-dashboard'));
         }else if(isset($_POST) && !empty($_POST)) {
-            //print_r($_POST);exit;
+            // print_r($_POST);exit;
+           
             $this->data['title'] = 'Rajbhasha | Admin Login';
             $this->form_validation->set_rules('username', 'Username', 'required|trim|stripslashes');
             $this->form_validation->set_rules('password', 'Password', 'required|trim|stripslashes');
-
             //if form validation is true
             if ($this->form_validation->run() == TRUE) {
-
+                
                 $username = $this->input->post('username');
                 $password = $this->input->post('password');
                 $login_resp = $this->LoginModel->get_login($username,$password);
                 if($login_resp['status'] === TRUE) {
-                    //print_r($login_resp);
+                   //print_r($login_resp);exit;
                     $session_array = array('user_id'=>$login_resp['data'][0]['login_id'],'username'=>$login_resp['data'][0]['username'],
                                             'role_id'=>$login_resp['data'][0]['role_id'],'role_name'=>$login_resp['data'][0]['role_name'],
                                             'role_type'=>$login_resp['data'][0]['role_type'],'is_admin'=>$login_resp['data'][0]['is_admin'],
@@ -57,7 +57,7 @@ class LoginController extends CI_Controller {
     public function logout() {
         $this->session->sess_destroy();
         $this->session->set_flashdata('success', 'Successfully Logged Out.....!!');
-        $this->data['title'] = 'DPR | Admin Login';
+        $this->data['title'] = 'Rajbhasha | Admin Login';
         $this->load->view('login', $this->data);
     }
     /* Login and Logout Function End */ 

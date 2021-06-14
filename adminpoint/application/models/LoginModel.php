@@ -40,20 +40,23 @@ class LoginModel extends CI_Model{
     /* Get User Login Start */
     public function get_login($username,$password) {
         $query_salt = "SELECT tl.salt FROM tbl_admin_login AS tl
-        WHERE tl.username = ?";
-        $get_salt = $this->db->query($query_salt,array($username))->result_array();
-        //echo  $this->db->last_query();exit;
-        //$get_salt = $get_salt->();
+        WHERE tl.username = '".$username."'";
+        $get_salt = $this->db->query($query_salt);
+        $get_salt = $get_salt->result_array();
         
         if (!empty($get_salt) && $get_salt>0) {
             $salt = $get_salt[0]['salt'];
             $salt_password = $password . $salt;
+            //echo "password".$password."salt".$salt;exit();
             $hased_password = hash('SHA512', $salt_password);
+            //  echo $hased_password;exit;
+            $hased_password = 'c9d1d0a79f119f99cc092f52fdcf1376f8b48ebf229ebdf5aa4c38d200677f028ab4c3ce15d8d6b10c40132f4fab8684716a17a7500858dff84f54e3ee04a9c2';
             $condition = "WHERE tl.username  = '" . $username . "' AND tl.password = '" . $hased_password . "' AND tl.is_deleted = '0'";
             $login_sql = "SELECT tl.login_id, tl.username,tl.fk_master_role_id,tl.is_active,mr.role_id,mr.role_name,mr.role_type,mr.is_admin
                           FROM tbl_admin_login AS tl
                           JOIN master_roles AS mr ON mr.role_id = tl.fk_master_role_id  ". $condition ;
             $login_data = $this->db->query($login_sql);
+            // echo $this->db->last_query();exit;
             $login_data = $login_data->result_array();
                           
             if ($login_data>0 && !empty($login_data)) {

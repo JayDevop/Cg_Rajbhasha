@@ -6,8 +6,8 @@ $route['default_controller'] = 'AdminLoginController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-// $route['(?i)login'] = 'LoginController/index';
-// $route['(?i)logout'] = 'LoginController/logout';
+$route['(?i)login'] = 'LoginController/index';
+$route['(?i)logout'] = 'LoginController/logout';
 
 /* Admin Routes Start */  
 $route['(?i)admin-dashboard'] = 'AdminDashboardController/index';
