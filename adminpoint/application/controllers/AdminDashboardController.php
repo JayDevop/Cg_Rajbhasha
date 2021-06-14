@@ -30,48 +30,6 @@ class AdminDashboardController extends CI_Controller
         $this->render_view('dashboard', $data);
     }
 
-    public function tender()
-    {
-        //echo "ok";exit();
-        $data['page_act'] = "at";
-        $data['page_name'] = "tender";
-        $this->render_view('tender', $data);
-    }
-
-    public function tender_upload_insert()
-    {
-        $tenderData['tender_name'] = $_POST['tender_name'];
-        $tenderData['closing_date'] = $_POST['closing_date'];
-        $tenderData['upload_type'] = $_POST['upload_type'];
-        $tenderData['system_ip'] = $_SERVER['SERVER_ADDR'];
-
-        $upload_url = "C:/xampp/htdocs/git/RDA_Web/";
-        if (!file_exists($upload_url."assets/uploads")) {
-
-            mkdir($upload_url."assets/uploads", 0777);
-        }
-        if ($tenderData['upload_type'] == 0) {
-            $file_directory = $upload_url."assets/uploads/tender";
-        } else {
-            $file_directory = $upload_url."assets/uploads/corrigendum";
-        }
-        if (!file_exists($file_directory)) {
-            mkdir($file_directory);
-        }
-        $name = "tender_file";
-        $path = $file_directory;
-        $tender_file = $this->upload($name, $path);
-        $sts = FALSE;
-        $sts = $this->AdminDashboardModel->tender_upload_insert($tenderData, $tender_file);
-
-        if ($sts) {
-            echo "<script>alert('Tender File Uploaded succesfully..')</script>";
-        } else {
-            echo "<script>alert('Try Again.');</script>";
-        }
-        echo "<script>location.replace(document.referrer);</script>";
-    }
-
     public function photo_upload_insert()
     {
         $pGalleryData['caption_name'] = $_POST['caption_name'];
