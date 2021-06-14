@@ -6,23 +6,31 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title mb-3">Manage pages</h4>
+                                <h4 class="card-title mb-3">Manage page content</h4>
                                 <div class="row mb-3">
                                     <div class="col-lg-12 form-group">
                                         <select name="pageid" id="pageid" class="form-control">
                                             <option value="">-- Select Page --</option>
                                             <?php if($pageList){
                                                 foreach($pageList as $value){
-                                                    echo '<option value="'.$value['id'].'">'.$value['page'].'</option>';
+                                                    if(@$_POST['pageid'] == $value['id']){
+                                                        $sel = 'selected';
+                                                    }else if(@$editItem['fk_pages_id'] == $value['id']){
+                                                        $sel = 'selected';   
+                                                    }else{
+                                                        $sel = '';
+                                                    }
+                                                    echo '<option value="'.$value['id'].'" '.$sel.'>'.$value['page'].'</option>';
                                                 }
                                             } ?>
                                         </select>
-                                        <span class="invalid-feedback"></span>
+                                        <span class="invalid-feedback"><?php echo form_error('pageid'); ?></span>
                                     </div>
                                 </div>
 
-                                <div id="classic-editor"></div>
-
+                                <textarea class="classic-editor" id="content" name="content"><?php echo set_value('content', @$editItem['content']); ?></textarea>
+                                <span class="invalid-feedback"><?php echo form_error('content'); ?></span>
+                                
                                 <div class="row mt-3">
                                     <div class="col-lg-12">
                                         <button type="submit" class="btn btn-primary">Submit</button>

@@ -24,7 +24,6 @@
 
     $(document).on('submit', '#manage-page-form', function(e){
         var flag = true;
-        e.preventDefault();
         if($('#pageid').val() == '' || $('#pageid').val() == 0){
             $('#pageid').addClass('is-invalid');
             $('#pageid~span').text('Please select page');
@@ -34,10 +33,19 @@
             $('#pageid~span').text('');
         }
 
-        console.log($('#classic-editor').getData());
+        if($('#content').val() == ''){
+            $('#content').addClass('is-invalid');
+            $('#content~span').text('Please write page contents');
+            flag = false;
+        }else{
+            $('#content').removeClass('is-invalid');
+            $('#content~span').text('');
+        }
 
-        if(flag == true){
-            alert('correct');
+        if(flag == false){
+            e.preventDefault();
+        }else{
+            return true;
         }
     });
  </script>

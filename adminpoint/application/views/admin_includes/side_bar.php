@@ -45,6 +45,13 @@
                                 </a>
                             </li>
 
+                            <li>
+                                <a href="<?php echo base_url('content-list'); ?>" class="waves-effect">
+                                    <i class="uil-window-section"></i>
+                                    <span>Content list</span>
+                                </a>
+                            </li>
+
                         </ul>
                     </div>
                     <!-- Sidebar -->

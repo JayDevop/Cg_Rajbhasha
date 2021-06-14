@@ -69,12 +69,55 @@ class AdminDashboardController extends CI_Controller
     }
 
 
-    public function manage_pages(){
+    public function manage_pages($contentid = 0){
         $data = array();
-        $data['title'] = 'Manage psage | CG RajBhasha';
+        $data['title'] = 'Manage page content | CG RajBhasha';
         $js_page = "admin_includes/custom_js_page";
+        if($this->input->server('REQUEST_METHOD')=="POST"){
+            $this->form_validation->set_rules('pageid','Page', 'required|trim');
+            $this->form_validation->set_rules('content','Content', 'required');
+            if ($this->form_validation->run()==TRUE) {
+                $data = array(
+                    'fk_pages_id' => $this->input->post('pageid'),
+                    'content' => $this->input->post('content'),
+                );
+                if($contentid){
+                    $response = $this->AdminDashboardModel->update_content($data, $contentid);
+                }else{
+                    $response = $this->AdminDashboardModel->insert_content($data);
+                }
+                if($response !== FALSE){
+                    $this->session->set_flashdata('responsemsg',array('Status'=>'success','msg'=>'Successfully Inserted....!!'));
+                    redirect(base_url('content-list'));
+                }else{
+                    $this->session->set_flashdata('responsemsg',array('Status'=>'error','msg'=>'Error occurred....!!'));
+                }
+            }
+        }
+
+        if($contentid){
+            $data['editItem'] = $this->AdminDashboardModel->contents(1, $contentid);
+        }
         $data['pageList'] = $this->AdminDashboardModel->page_list();
         $this->render_view('manage_pages', $data, $js_page);
+    }
+
+    public function content_list($delete = 0){
+        $data = array();
+        $data['title'] = 'Content list | CG RajBhasha';
+        if($delete){
+            $data = array('is_deleted' => 1);
+            $response = $this->AdminDashboardModel->contents(2, $delete, $data);
+            if($response !== FALSE){
+                $this->session->set_flashdata('responsemsg',array('Status'=>'success','msg'=>'Successfully Deleted....!!'));
+                redirect(base_url('content-list'));
+            }else{
+                $this->session->set_flashdata('responsemsg',array('Status'=>'error','msg'=>'Not deleted....!!'));
+            }
+            redirect(base_url('content-list'));
+        }
+        $data['result'] = $this->AdminDashboardModel->contents();
+        $this->render_view('content_list', $data);
     }
 
 

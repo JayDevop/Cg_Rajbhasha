@@ -13,7 +13,8 @@ class Home extends MY_Controller {
 
   	public function index()
   	{
-      $this->render_view('index',$this->data);
+          $data['title'] = 'छत्तीसगढ़ राजभाषा आयोग';
+      $this->render_view('index',$data);
   	}
 
       public function photo_gallery()
@@ -102,6 +103,11 @@ class Home extends MY_Controller {
     //     $this->load->view('user_include/footer_hindi',$data);
     //     $this->load->view('user_include/footer_link',$data);        
     //   }
+
+    public function about_us(){
+        $data['title'] = 'हमारे बारे में | छत्तीसगढ़ राजभाषा आयोग';
+        $this->render_view('about_us', $data);
+    }
     
 	   private function render_view($view, $data) 
      	 {

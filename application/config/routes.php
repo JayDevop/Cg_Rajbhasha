@@ -32,6 +32,9 @@ $route['(?i)Online-Payment']='Dashboard/online_payment';
 //Sakshi
 $route['(?i)OtherScheme-Details']='Dashboard/otherScheme';
 
+// Pragyesh
+$route['about-us'] = 'Home/about_us';
+
 
 
 

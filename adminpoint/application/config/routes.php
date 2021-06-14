@@ -15,6 +15,9 @@ $route['(?i)tender-upload-insert'] = 'AdminDashboardController/tender_upload_ins
 $route['(?i)tender-upload'] = 'AdminDashboardController/tender';
 
 $route['manage-pages'] = 'AdminDashboardController/manage_pages';
+$route['manage-pages/(:any)'] = 'AdminDashboardController/manage_pages/$1';
+$route['content-list'] = 'AdminDashboardController/content_list';
+$route['content-list/(:num)'] = 'AdminDashboardController/content_list/$1';
 /* Admin Routes Start */  
 
 /* Ajax Start */  
