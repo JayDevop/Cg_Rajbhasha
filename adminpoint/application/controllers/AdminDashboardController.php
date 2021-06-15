@@ -36,10 +36,9 @@ class AdminDashboardController extends CI_Controller
         $pGalleryData['original_file_name'] = $_FILES['file']['name'][0];
         $pGalleryData['user_id'] = $this->session->userdata('user_id');
         $pGalleryData['system_ip'] = $_SERVER['SERVER_ADDR'];
-       if (!file_exists($this->upload_url."assets/uploads")) {
-
-        mkdir($this->upload_url."assets/uploads", 0777);
-    }
+        if (!file_exists($this->upload_url."assets/uploads")) {
+            mkdir($this->upload_url."assets/uploads", 0777);
+        }
         $file_directory = $this->upload_url."assets/uploads/photo_gallery";
     
         if (!file_exists($file_directory)) {
@@ -92,28 +91,11 @@ class AdminDashboardController extends CI_Controller
                 }
             }
         }
-
         if($contentid){
             $data['editItem'] = $this->AdminDashboardModel->contents(1, $contentid);
         }
         $data['pageList'] = $this->AdminDashboardModel->page_list();
         $this->render_view('manage_pages', $data, $js_page);
-    }
-
-    public function photo_gallery(){
-        $data = array();
-        $data['title'] = 'Photo Gallery Add | CG RajBhasha';
-        $js_page = "admin_includes/custom_js_page";
-        $data['photoList'] = $this->AdminDashboardModel->photo_gallery_list();
-        $this->render_view('add_photo_gallery', $data, $js_page);
-    }
-
-    public function webinar_conduct(){
-        $data = array();
-        $data['title'] = 'Webinar Creation | CG RajBhasha';
-        $js_page = "admin_includes/custom_js_page";
-       // $data['photoList'] = $this->AdminDashboardModel->photo_gallery_list();
-        $this->render_view('webinar_conduct_page', $data, $js_page);
     }
 
     public function content_list($delete = 0){
@@ -134,6 +116,21 @@ class AdminDashboardController extends CI_Controller
         $this->render_view('content_list', $data);
     }
 
+    public function photo_gallery(){
+        $data = array();
+        $data['title'] = 'Photo Gallery Add | CG RajBhasha';
+        $js_page = "admin_includes/custom_js_page";
+        $data['photoList'] = $this->AdminDashboardModel->photo_gallery_list();
+        $this->render_view('add_photo_gallery', $data, $js_page);
+    }
+
+    public function webinar_conduct(){
+        $data = array();
+        $data['title'] = 'Webinar Creation | CG RajBhasha';
+        $js_page = "admin_includes/custom_js_page";
+       // $data['photoList'] = $this->AdminDashboardModel->photo_gallery_list();
+        $this->render_view('webinar_conduct_page', $data, $js_page);
+    }
 
     private function render_view($view, $data, $js_page = null)
     {
