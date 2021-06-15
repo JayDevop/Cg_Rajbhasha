@@ -1,7 +1,15 @@
 
 
   <main id="main">
-
+<style>
+  .gallery_img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+</style>
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
@@ -26,10 +34,11 @@
         <div class="col-md-6 d-flex align-items-stretch">
             <div class="card">
               <div class="card-img">
-                <img src="<?php echo $filepath.$photoList[$i]["uploaded_file_name"]; ?>" alt="..." style="width:100%;height: 100%;">
+                <!-- <img src="<?php echo $filepath.$photoList[$i]["uploaded_file_name"]; ?>" alt="..." style="width:100%;height:auto;"> -->
+                <img src="<?php echo $filepath.$photoList[$i]["uploaded_file_name"]; ?>" class="gallery_img" alt="..." ">
               </div>
               <div class="card-body">
-                <h5 class="card-title"><a href="">" <?php echo $photoList[$i]["caption_name"]; ?> "</a></h5>
+                <h6 class="card-title"><a href="">" <?php echo $photoList[$i]["caption_name"]; ?> "</a></h6>
                 <p class="fst-italic text-center"><?php 
                 $date = $photoList[$i]["posted_on"];
                 $date = strtotime($date);

@@ -32,21 +32,32 @@ class AdminDashboardController extends CI_Controller
 
     public function photo_upload_insert()
     {
+        $js_page = "admin_includes/custom_js_page";
         $pGalleryData['caption_name'] = $_POST['caption_name'];
         $pGalleryData['original_file_name'] = $_FILES['file']['name'][0];
         $pGalleryData['user_id'] = $this->session->userdata('user_id');
         $pGalleryData['system_ip'] = $_SERVER['SERVER_ADDR'];
-        if (!file_exists($this->upload_url."assets/uploads")) {
-            mkdir($this->upload_url."assets/uploads", 0777);
-        }
-        $file_directory = $this->upload_url."assets/uploads/photo_gallery";
-    
-        if (!file_exists($file_directory)) {
-            mkdir($file_directory);
-        }
-        $name = "file";
-        $path = $file_directory;
-        $photo_file_response = $this->upload($name, $path);
+
+        if (!empty($_FILES)) {
+            if (!file_exists($this->upload_url . "assets/uploads")) {
+
+                mkdir($this->upload_url . "assets/uploads", 0777);
+            }
+            $file_directory = $this->upload_url . "assets/uploads/photo_gallery";
+
+            if (!file_exists($file_directory)) {
+                mkdir($file_directory);
+            }
+            $name = "file";
+            $path = $file_directory;
+            $photo_file_response = $this->upload($name, $path);
+            if ($photo_file_response['sts'] == 0) {
+             //print_r($photo_file_response[0]);exit;
+                echo "<script>alert($photo_file_response[0])</script>";
+                echo "<script>alert('कृपया फाइल 200KB तक का अपलोड करें|')</script>";
+                echo "<script>location.replace(document.referrer)</script>";
+                exit();
+            }
         $sts = FALSE;
         $sts = $this->AdminDashboardModel->photo_gallery_upload_insert($pGalleryData, $photo_file_response);
 
@@ -56,8 +67,14 @@ class AdminDashboardController extends CI_Controller
             echo "<script>alert('Try Again.');</script>";
         }
         echo "<script>location.replace(document.referrer);</script>";
-        }
 
+        } else {
+            echo "<script>alert('कृपया फोटो अपलोड करे|')</script>";
+            echo "<script>location.replace(document.referrer)</script>";
+            exit();
+        }
+        
+    }
 
     public function manage_pages(){
         $contentid = (isset($_GET['contentid']) && $_GET['contentid'] != '') ? $_GET['contentid'] : 0;
@@ -180,7 +197,7 @@ class AdminDashboardController extends CI_Controller
                 $config['allowed_types'] = 'jpg|jpeg|png|pdf|doc|docx|xls|xlsx';
                 // $config['allowed_types'] = 'pdf'; 
                 $config['detect_mime']  = TRUE;
-                //$config['max_size']    = 102400;       
+               // $config['max_size']    = 200;       
                 // $config['max_width'] = '1024'; 
                 // $config['max_height'] = '768';   
                 //echo $_FILES['file']['type'];exit;
@@ -194,9 +211,11 @@ class AdminDashboardController extends CI_Controller
                     // Uploaded file data 
 
                     $fileData[$i] = $this->upload->data();
+                    $fileData['sts'] = 1;
                 } else {
 
                     $fileData[$i] = $this->upload->display_errors();
+                    $fileData['sts'] = 0;
                 }
             }
         }

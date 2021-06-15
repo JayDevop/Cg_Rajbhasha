@@ -71,7 +71,7 @@
 
         if($('#customFile').val() == '' || $('#customFile').val() == 0){
             $('#customFile').addClass('is-invalid');
-            $('#customFile~span').text('कृपया फोटो सलेक्ट करें');
+            $('#customFile~span').text('कृपया फोटो अपलोड करें');
             flag = false;
         }else{
             $('#customFile').removeClass('is-invalid');
