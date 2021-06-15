@@ -60,7 +60,8 @@ class AdminDashboardController extends CI_Controller
         }
 
 
-    public function manage_pages($contentid = 0){
+    public function manage_pages(){
+        $contentid = (isset($_GET['contentid']) && $_GET['contentid'] != '') ? $_GET['contentid'] : 0;
         $data = array();
         $data['title'] = 'Manage page content | CG RajBhasha';
         $js_page = "admin_includes/custom_js_page";

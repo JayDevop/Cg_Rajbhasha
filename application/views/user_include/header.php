@@ -28,6 +28,7 @@
 
   <!-- Template Main CSS File -->
   <link href="<?=base_url()?>assets/css/style.css" rel="stylesheet">
+  <link href="<?=base_url()?>assets/css/custom.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: Mentor - v4.3.0

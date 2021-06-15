@@ -12,8 +12,7 @@ $route['(?i)logout'] = 'LoginController/logout';
 /* Admin Routes Start */  
 $route['(?i)admin-dashboard'] = 'AdminDashboardController/index';
 
-$route['manage-pages'] = 'AdminDashboardController/manage_pages';
-$route['manage-pages/(:any)'] = 'AdminDashboardController/manage_pages/$1';
+$route['(?i)manage-pages'] = 'AdminDashboardController/manage_pages';
 $route['content-list'] = 'AdminDashboardController/content_list';
 $route['content-list/(:num)'] = 'AdminDashboardController/content_list/$1';
 $route['(?i)photo-gallery'] = 'AdminDashboardController/photo_gallery';
