@@ -21,10 +21,10 @@
         <ul>
 
 
-          <li><i class="bx bx-chevron-right"></i> <a href="#">प्रशिक्षण</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">सम्मेलन</a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">प्रकाशन </a></li>
-          <li><i class="bx bx-chevron-right"></i> <a href="#">अनुदान</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url('training'); ?>">प्रशिक्षण</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url('seminar'); ?>">सम्मेलन</a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url('publication'); ?>">प्रकाशन </a></li>
+          <li><i class="bx bx-chevron-right"></i> <a href="<?php echo base_url('grant'); ?>">अनुदान</a></li>
           <li><i class="bx bx-chevron-right"></i> <a href="#">वेबिनार</a></li>
 
         </ul>
@@ -73,7 +73,7 @@
 
   <div class="me-md-auto text-center text-md-start">
     <div class="copyright">
-      <a href="https://www.chips.gov.in/"><img src=<?=base_url()?>"assets/img/chips-logo.png"></a>
+      <a href="https://www.chips.gov.in/"><img src=<?=base_url("assets/img/chips-logo.png")?>></a>
       वेबसाइट प्रबंधन कार्य छत्तीसगढ़ <strong><span>इन्फोटेक प्रमोशन सोसायटी (CHiPS) एवं इलेक्ट्रॉनिक्स एवं सूचना
           प्रौद्योगिकी विभाग, छत्तीसगढ़ सरकार </span></strong>द्वारा किया जा रहा है |
     </div>
