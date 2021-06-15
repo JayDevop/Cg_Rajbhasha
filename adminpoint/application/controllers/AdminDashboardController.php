@@ -107,6 +107,14 @@ class AdminDashboardController extends CI_Controller
         $this->render_view('add_photo_gallery', $data, $js_page);
     }
 
+    public function webinar_conduct(){
+        $data = array();
+        $data['title'] = 'Webinar Creation | CG RajBhasha';
+        $js_page = "admin_includes/custom_js_page";
+       // $data['photoList'] = $this->AdminDashboardModel->photo_gallery_list();
+        $this->render_view('webinar_conduct_page', $data, $js_page);
+    }
+
     public function content_list($delete = 0){
         $data = array();
         $data['title'] = 'Content list | CG RajBhasha';
