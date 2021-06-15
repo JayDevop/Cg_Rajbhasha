@@ -1,4 +1,5 @@
 by Jay : 15/06/2021
+ -- sample photo gallery insertion
 
 INSERT INTO `tbl_photo_gallery` (`photo_id`, `caption_name`, `original_file_name`, `uploaded_file_name`, `file_type`, `file_url`, `file_size`, `ip_address`, `created_by`, `created_datetime`, `modify_datetime`) VALUES
 	(14, 'जागरण आंदोलन', 'news.jpg', 'news_60c7978fd3dae.jpg', 'image/jpeg', 'C:/xampp/htdocs/git/Cg_Rajbhasha/assets/uploads/photo_gallery/news_60c7978fd3dae.jpg', '207', '::1', 1, '2021-06-14 23:23:19', NULL),
