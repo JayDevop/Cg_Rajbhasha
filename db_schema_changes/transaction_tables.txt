@@ -1,23 +1,25 @@
+by Jay : 15/06/2021
+
+INSERT INTO `tbl_photo_gallery` (`photo_id`, `caption_name`, `original_file_name`, `uploaded_file_name`, `file_type`, `file_url`, `file_size`, `ip_address`, `created_by`, `created_datetime`, `modify_datetime`) VALUES
+	(14, 'जागरण आंदोलन', 'news.jpg', 'news_60c7978fd3dae.jpg', 'image/jpeg', 'C:/xampp/htdocs/git/Cg_Rajbhasha/assets/uploads/photo_gallery/news_60c7978fd3dae.jpg', '207', '::1', 1, '2021-06-14 23:23:19', NULL),
+	(15, 'पूर्व सी.एम. से भेट', 'meetingwithPrevCM.jpg', 'meetingwithPrevCM_60c797ac159a4.jpg', 'image/jpeg', 'C:/xampp/htdocs/git/Cg_Rajbhasha/assets/uploads/photo_gallery/meetingwithPrevCM_60c797ac159a4.jpg', '100.44', '::1', 1, '2021-06-14 23:23:48', NULL);
+
 by Jay : 14/06/2021
 
-CREATE TABLE `tbl_photo_gallery` (
-	`photo_id` INT(11) NOT NULL AUTO_INCREMENT,
-	`caption_name` TEXT NOT NULL,
-	`original_file_name` VARCHAR(150) NOT NULL,
-	`uploaded_file_name` VARCHAR(99) NOT NULL COLLATE 'utf8_unicode_ci',
-	`file_type` VARCHAR(50) NOT NULL COLLATE 'utf8_unicode_ci',
-	`file_url` VARCHAR(99) NOT NULL COLLATE 'utf8_unicode_ci',
-	`file_size` VARCHAR(99) NOT NULL,
-	`ip_address` VARCHAR(255) NOT NULL,
-	`created_by` INT(5) NOT NULL,
-	`created_datetime` TIMESTAMP NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-	`modify_datetime` TIMESTAMP NULL DEFAULT NULL ON UPDATE current_timestamp(),
-	PRIMARY KEY (`photo_id`)
-)
-COLLATE='utf8_general_ci'
-ENGINE=InnoDB
-AUTO_INCREMENT=10
-;
+CREATE TABLE IF NOT EXISTS `tbl_photo_gallery` (
+  `photo_id` int(11) NOT NULL AUTO_INCREMENT,
+  `caption_name` text NOT NULL,
+  `original_file_name` varchar(150) NOT NULL,
+  `uploaded_file_name` varchar(99) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `file_type` varchar(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `file_url` varchar(99) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `file_size` varchar(99) NOT NULL,
+  `ip_address` varchar(255) NOT NULL,
+  `created_by` int(5) NOT NULL,
+  `created_datetime` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `modify_datetime` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
+  PRIMARY KEY (`photo_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 By Pragyesh: 14-06-2021
 CREATE TABLE `pages` (
