@@ -86,11 +86,13 @@
         <script src="<?=base_url()?>assets/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
 
         <script>
-        ClassicEditor
-        .create( document.querySelector( '.classic-editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
+            if($("textarea").hasClass("classic-editor")){
+                ClassicEditor
+                .create( document.querySelector( '.classic-editor' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+            }
         </script>
 
         <!-- Required datatable js -->

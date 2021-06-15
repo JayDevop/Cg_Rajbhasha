@@ -31,18 +31,20 @@
     </head>
 
     <!-- Load delete modal -->
-    <div class="modal fade bs-example-modal-sm" id="deleteModal" role="dialog">
+    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="deleteModal"  data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog modal-sm">
             <div class="modal-content text-center">
-                <div class="modal-header">
-                    <span style="margin-left: 35%;"><i class="fa fa-times-circle fa-5x text-danger"></i></span><br>
-                    <h5><strong>Are you sure ?</strong></h5>
+                <div class="modal-header" style="padding-left: 35%;">
+                    <i class="fa fa-trash fa-5x text-danger"></i>
                 </div>
-                <div class="modal-footer" style="text-align: center;">
-                    <a href="" class="btn btn-danger btn-sm" id="del_url">Delete</a>
-                    <button type="button" class="btn btn-default btn-sm" data-bs-dismiss="modal">Close</button>
+                <div class="modal-body">
+                    <h5>Are you sure?</h5>
                 </div>
-            </div>
-        </div>
+                <div class="modal-footer text-center">
+                    <a href="" id="del_url" class="btn btn-danger btn-sm">Delete</a>
+                    <button class="btn btn-default tbn-sm" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
     </div>
     <!-- Load delete modal -->
