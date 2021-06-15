@@ -59,6 +59,13 @@
                                 </a>
                             </li>
 
+                            <li>
+                                <a href="<?php echo base_url('webinar-conduct'); ?>">
+                                    <i class="uil-window-alt"></i>
+                                    <span>Conduct Webinar</span>
+                                </a>
+                            </li>
+
 
                         </ul>
                     </div>
