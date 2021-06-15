@@ -4,10 +4,10 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <div class="card-body">
+                        <div class="card-body table-responsive">
                             <h4 class="card-title">Content list</h4>
                             
-                            <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                            <table id="datatable" class="table table-bordered nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>
                                     <tr>
                                         <th>S.No.</th>
@@ -28,8 +28,8 @@
                                             echo '<td>'.$i++.'</td>';
                                             echo '<td>'.$value['page'].'</td>';
                                             echo '<td>'.$value['content'].'</td>';
-                                            echo '<td>'.date('d-m-Y', strtotime($value['created_at'])).'</td>';
-                                            echo '<td>'.date('d-m-Y', strtotime($value['updated_at'])).'</td>';
+                                            echo '<td>'.date('d-m-Y h:i:s A', strtotime($value['created_at'])).'</td>';
+                                            echo '<td>'.date('d-m-Y h:i:s A', strtotime($value['updated_at'])).'</td>';
                                             echo '<td>
                                                 <a href="'.base_url().'manage-pages?contentid='.md5($value['id']).'" class="btn btn-info btn-sm"><i class="fa fa-edit"></i> Edit</a>
 

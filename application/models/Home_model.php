@@ -97,5 +97,23 @@ class Home_model extends CI_Model
     public function about(){
         return $this->db->get_where('page_contents', array('fk_pages_id' => 1, 'is_deleted' => 0))->row_array();
     }
+
+    public function training(){
+        return $this->db->get_where('page_contents', array('fk_pages_id' => 2, 'is_deleted' => 0))->row_array();
+    }
+
+    public function seminar(){
+        return $this->db->get_where('page_contents', array('fk_pages_id' => 3, 'is_deleted' => 0))->row_array();
+    }
+
+    public function publication(){
+        return $this->db->get_where('page_contents', array('fk_pages_id' => 4, 'is_deleted' => 0))->row_array();
+    }
+
+    public function grant(){
+        return $this->db->get_where('page_contents', array('fk_pages_id' => 5, 'is_deleted' => 0))->row_array();
+    }
+
+    
 }
 ?>

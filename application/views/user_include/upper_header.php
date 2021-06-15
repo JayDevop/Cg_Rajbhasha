@@ -11,12 +11,12 @@
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="active" href="<?php echo base_url(); ?>">मुख्य पृष्ठ</a></li>
+          <li><a href="<?php echo base_url(); ?>">मुख्य पृष्ठ</a></li>
           <li><a href="<?php echo base_url('about-us'); ?>">हमारे बारे में</a></li>
-          <li><a href="#">प्रशिक्षण</a></li>
-          <li><a href="#">सम्मेलन</a></li>
-          <li><a href="#">प्रकाशन</a></li>
-          <li><a href="#">अनुदान</a></li>
+          <li><a href="<?php echo base_url('training'); ?>">प्रशिक्षण</a></li>
+          <li><a href="<?php echo base_url('seminar'); ?>">सम्मेलन</a></li>
+          <li><a href="<?php echo base_url('publication'); ?>">प्रकाशन</a></li>
+          <li><a href="<?php echo base_url('grant'); ?>">अनुदान</a></li>
           <li><a href="<?=base_url('photo-gallery')?>">फोटो ग़ैलरी</a></li>
           <li><a href="#"> वेबिनार</a></li>
           <li><a href="#">संपर्क</a></li>

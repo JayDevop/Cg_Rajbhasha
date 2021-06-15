@@ -34,6 +34,10 @@ $route['(?i)OtherScheme-Details']='Dashboard/otherScheme';
 
 // Pragyesh
 $route['about-us'] = 'Home/about_us';
+$route['training'] = 'Home/training';
+$route['seminar'] = 'Home/seminar';
+$route['publication'] = 'Home/publication';
+$route['grant'] = 'Home/grant';
 
 
 
