@@ -5,7 +5,7 @@
     <!-- ======= Breadcrumbs ======= -->
     <div class="breadcrumbs" data-aos="fade-in">
       <div class="container">
-      <br<br><br><br>
+      
         <h2>फोटो ग़ैलरी</h2>
         <p>फोटो एंव पेपर कटिंग</p>
       </div>
