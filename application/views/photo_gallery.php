@@ -26,7 +26,7 @@
         <div class="col-md-6 d-flex align-items-stretch">
             <div class="card">
               <div class="card-img">
-                <img src="<?php echo $filepath.$photoList[$i]["uploaded_file_name"]; ?>" alt="..." style="width:100%">
+                <img src="<?php echo $filepath.$photoList[$i]["uploaded_file_name"]; ?>" alt="..." style="width:100%;height: 100%;">
               </div>
               <div class="card-body">
                 <h5 class="card-title"><a href="">" <?php echo $photoList[$i]["caption_name"]; ?> "</a></h5>
