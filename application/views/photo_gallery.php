@@ -29,8 +29,11 @@
                 <img src="<?php echo $filepath.$photoList[$i]["uploaded_file_name"]; ?>" alt="..." style="width:100%">
               </div>
               <div class="card-body">
-                <h5 class="card-title"><a href="">"<?php echo $photoList[$i]["caption_name"]; ?></a></h5>
-                <p class="fst-italic text-center"><?php echo $photoList[$i]["posted_on"]; ?></p>
+                <h5 class="card-title"><a href="">" <?php echo $photoList[$i]["caption_name"]; ?> "</a></h5>
+                <p class="fst-italic text-center"><?php 
+                $date = $photoList[$i]["posted_on"];
+                $date = strtotime($date);
+                echo "uploaded on - " .date('l, d-M-Y h:i:s', $date);?></p>
                 <!-- <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p> -->
               </div>
             </div>

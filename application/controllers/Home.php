@@ -19,6 +19,7 @@ class Home extends MY_Controller {
 
       public function photo_gallery()
   	{
+        $data['title'] = 'छत्तीसगढ़ राजभाषा आयोग फोटो ग़ैलरी';
         $data['photoList'] = $this->Home_model->photo_gallery_list();
         // print_r($data['photoList']);exit;
          $this->render_view('photo_gallery',$data);
