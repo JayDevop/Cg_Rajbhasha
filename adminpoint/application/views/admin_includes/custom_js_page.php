@@ -13,7 +13,16 @@
                     $("#loader").show();
                 },
                 success: function(response){
-                    // $('#center_id').html(option);
+                    if(response['status'] == 'success'){
+                        if(response['output']){
+                            console.log(response['output']['content'])
+                            $('.ck-editor__editable p').html(response['output']['content'])
+                            // $('#content').val(response['output']['content']);
+                        }else{
+                            $('.ck-editor__editable p').html('')
+                        }
+                        
+                    }
                     $('#loader').hide();
                     $('#pageid').removeClass('is-invalid');
                     $('#pageid~span').text('');

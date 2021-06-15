@@ -109,13 +109,14 @@ class Home extends MY_Controller {
 
     public function about_us(){
         $data['title'] = 'हमारे बारे में | छत्तीसगढ़ राजभाषा आयोग';
-        $this->render_view('about_us', $data);
+        $data['aboutContent'] = $this->Home_model->about();
+        $this->render_view('about', $data);
     }
     
 	   private function render_view($view, $data) 
      	 {
-          $this->load->view('user_include/upper_header',$data);
-          $this->load->view('user_include/header',$data);
+              $this->load->view('user_include/header',$data);
+              $this->load->view('user_include/upper_header',$data);
           $this->load->view($view,$data);
           $this->load->view('user_include/footer',$data);
           $this->load->view('user_include/footer_link',$data);        

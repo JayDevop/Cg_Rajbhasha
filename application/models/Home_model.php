@@ -93,5 +93,9 @@ class Home_model extends CI_Model
         return $return_list;
     }
 /* Photo Gallery list  */
+
+    public function about(){
+        return $this->db->get_where('page_contents', array('fk_pages_id' => 1, 'is_deleted' => 0))->row_array();
+    }
 }
 ?>

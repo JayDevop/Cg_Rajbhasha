@@ -108,7 +108,8 @@ class AdminDashboardModel extends CI_Model
                 $this->db->select('page_contents.*, pages.page')
                             ->from('page_contents')
                             ->join('pages', 'pages.id = page_contents.fk_pages_id')
-                            ->where('page_contents.is_deleted', 0);
+                            ->where('page_contents.is_deleted', 0)
+                            ->order_by("page_contents.id", "desc");
                 return $this->db->get()->result_array();
             break;
         }

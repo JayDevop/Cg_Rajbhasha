@@ -89,9 +89,13 @@
             if($("textarea").hasClass("classic-editor")){
                 ClassicEditor
                 .create( document.querySelector( '.classic-editor' ) )
+                .then( editor => {
+                    myEditor = editor;
+                } )
                 .catch( error => {
                     console.error( error );
                 } );
+                
             }
         </script>
 
