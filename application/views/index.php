@@ -1,4 +1,9 @@
 <main id="main" style="margin-top: 80px;">
+<style>
+.why-us .icon-boxes .icon-box {
+    border: 1px solid #0fd572;
+}
+</style>
   <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-interval="4500">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -29,7 +34,7 @@
   <br>
   <div class="container-fluid" data-aos="fade-down">
   <div class="row">
-  <img src="./assets/img/Images/rajbhasha.jpg" class="d-block w-100" alt="b">
+  <img src="./assets/img/Images/rajbhasha.png" class="d-block w-100" alt="b">
   </div>
   </div>
    <!-- ======= Why Us Section ======= -->
@@ -56,21 +61,21 @@
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-receipt"></i>
                     <h4>उद्देश्य 1</h4>
-                    <p><strong>राजभाषा को संविधान की आठवीं अनुसूची में दर्जा दिलाना।</strong></p>
+                    <p><h5><strong style="color: green;">राजभाषा को संविधान की आठवीं अनुसूची में दर्जा दिलाना।</strong></h5></p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-cube-alt"></i>
                     <h4>उद्देश्य 2</h4>
-                    <p><strong>छत्तीसगढ़ी भाषा को राजकाज की भाषा के उपयोग में लाना।</strong></p>
+                    <p><h5><strong style="color: green;">छत्तीसगढ़ी भाषा को राजकाज की भाषा के उपयोग में लाना।</strong></h5></p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-text"></i>
                     <h4>उद्देश्य 3</h4>
-                    <p><strong>त्रिभाषायी भाषा रूप में शामिल पाठ्यक्रम में शामिल करना।</strong></p>
+                    <p><h5><strong style="color: green;">त्रिभाषायी भाषा रूप में शामिल पाठ्यक्रम में शामिल करना।</strong></h5></p>
                   </div>
                 </div>
               </div>

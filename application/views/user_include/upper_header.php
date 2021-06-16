@@ -17,8 +17,14 @@
           <li><a href="<?php echo base_url('seminar'); ?>">सम्मेलन</a></li>
           <li><a href="<?php echo base_url('publication'); ?>">प्रकाशन</a></li>
           <li><a href="<?php echo base_url('grant'); ?>">अनुदान</a></li>
-          <li><a href="<?=base_url('photo-gallery')?>">फोटो ग़ैलरी</a></li>
-          <li><a href="#"> वेबिनार</a></li>
+          <li class="dropdown"><a href="#"><span>ग़ैलरी</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#"></a></li>
+              <li><a href="<?=base_url('photo-gallery')?>">फोटो ग़ैलरी</a></li>
+              <li><a href="#">वीडियो ग़ैलरी</a></li>
+            </ul>
+          </li>
+          <li><a href="#">वेबिनार</a></li>
           <li><a href="#">संपर्क</a></li>
           <li><a href="<?=base_url('adminpoint/login')?>">लॉग इन</a></li>
         </ul>
