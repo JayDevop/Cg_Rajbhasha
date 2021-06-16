@@ -1,5 +1,5 @@
 <main id="main" style="margin-top: 80px;">
-  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-interval="4500">
+  <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-interval="4500">
     <div class="carousel-indicators">
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -25,6 +25,12 @@
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
+  </div> -->
+  <br>
+  <div class="container-fluid" data-aos="fade-down">
+  <div class="row">
+  <img src="./assets/img/Images/rajbhasha.jpg" class="d-block w-100" alt="b">
+  </div>
   </div>
    <!-- ======= Why Us Section ======= -->
    <section id="why-us" class="why-us">
