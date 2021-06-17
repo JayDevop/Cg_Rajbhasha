@@ -93,7 +93,7 @@ class AdminDashboardController extends CI_Controller
                     $data['updated_at'] = date('Y-m-d H:i:s');
                     $response = $this->AdminDashboardModel->update_content($data, $contentid);
                 }else{
-                    if($this->db->get_where('page_contents', array('fk_pages_id' => $this->input->post('pageid'), 'is_deleted' => 1))->num_rows() > 0){
+                    if($this->db->get_where('page_contents', array('fk_pages_id' => $this->input->post('pageid'), 'is_deleted' => 0))->num_rows() > 0){
                         // '<script>alert("Data already exist for this page");</script>';
                         redirect(base_url('content-list'));
                     }else{
