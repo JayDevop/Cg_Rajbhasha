@@ -24,6 +24,13 @@ class Home extends MY_Controller {
         // print_r($data['photoList']);exit;
          $this->render_view('photo_gallery',$data);
   	}
+      public function video_gallery()
+  	{
+        $data['title'] = 'छत्तीसगढ़ राजभाषा आयोग वीडियो ग़ैलरी';
+        //$data['photoList'] = $this->Home_model->photo_gallery_list();
+        // print_r($data['photoList']);exit;
+         $this->render_view('video_gallery',$data);
+  	}
 
       public function log_in()
   	{

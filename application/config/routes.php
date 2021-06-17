@@ -9,6 +9,8 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['(?i)admin-dashboard'] = 'AdminDashboardController/index';
 $route['(?i)photo-gallery'] = 'Home/photo_gallery';
+$route['(?i)video-gallery'] = 'Home/video_gallery';
+
 $route['(?i)Home'] = 'Home/index';
 $route['(?i)Home-Hindi'] = 'Home/dashboard_hindi';
 $route['(?i)About-Organisation'] = 'Dashboard/organisation';

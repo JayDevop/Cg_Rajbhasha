@@ -21,7 +21,7 @@
             <ul>
               <li><a href="#"></a></li>
               <li><a href="<?=base_url('photo-gallery')?>">फोटो ग़ैलरी</a></li>
-              <li><a href="#">वीडियो ग़ैलरी</a></li>
+              <li><a href="<?=base_url('video-gallery')?>">वीडियो ग़ैलरी</a></li>
             </ul>
           </li>
           <li><a href="#">वेबिनार</a></li>
