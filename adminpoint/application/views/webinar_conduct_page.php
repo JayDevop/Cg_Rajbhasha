@@ -8,7 +8,7 @@
                             <div class="card-body">
                                 <h4 class="card-title mb-3">वेबिनार आयोजित करें</h4>
                                 <div class="row mb-3 text-center">
-                                <p><a href="javascript:void(0);" NAME="Error Handling"  style="font-size: 18px;font-weight: bold;" title="ZeroDivisionError handling" onClick=window.open("https://meet.google.com/?hs=197&pli=1&authuser=0","Ratting","width=550,height=170,left=150,top=200,toolbar=0,status=0,");>Click here to create the webinar link</a></p>
+                                <p><a href="javascript:void(0);" NAME="Error Handling"  style="font-size: 18px;font-weight: bold;" title="ZeroDivisionError handling" onClick=window.open("https://meet.google.com/?hs=197&pli=1&authuser=0","Ratting","width=550,height=170,left=150,top=200,toolbar=0,status=0,");>वेबिनार लिंक बनाने के लिए यहां क्लिक करें</a></p>
                                 </div>
 
                                 

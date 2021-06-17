@@ -34,8 +34,13 @@
         <h4>Our Services</h4>
         <div class="bottom_box">
           <ul>
-            <li class="servertime"><span>आज का दिनांक: </span><span id="serverTime">07/06/2021 12:53:00 PM</span>
-            </li>
+            <!-- <li class="servertime"><span>आज का दिनांक: </span><span id="serverTime">07/06/2021 12:53:00 PM</span>
+            </li> -->
+            <!-- <p>आज का दिनांक/Time: MM/DD/YYYY hh:mm<br>
+            <?php echo(strftime("%m/%d/%Y %H:%M")); ?></p> -->
+
+            <p>आज का दिनांक/Time: &nbsp;<?php echo(strftime("%m/%d/%Y %H:%M")); ?></p>
+
             <li class="countportlet">
               <div id="p_p_id_VisitorsCount_WAR_cgssdgportlet_INSTANCE_AccmXu70YbN5_"
                 class="portlet-boundary portlet-boundary_VisitorsCount_WAR_cgssdgportlet_ portlet-static portlet-static-end Visitors Count-portlet ">
