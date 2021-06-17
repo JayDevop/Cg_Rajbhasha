@@ -1,8 +1,20 @@
+
+
 <div class="main-content">
     <div class="page-content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
+                    <?php if($this->session->flashdata('responsemsg')){ ?>
+                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                            <i class="fa fa-exclamation-triangle me-2"></i>
+                            <?php echo $this->session->flashdata('responsemsg')['msg'] ?>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                            
+                            </button>
+                        </div>
+                    <?php } ?>
+
                     <div class="card">
                         <div class="card-body table-responsive">
                             <h4 class="card-title">प्रकरण सूची</h4>
