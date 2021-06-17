@@ -14,13 +14,13 @@
                 },
                 success: function(response){
                     if(response['status'] == 'success'){
-                        if(response['output']){
-                            console.log(response['output']['content'])
-                            $('.ck-editor__editable p').html(response['output']['content'])
-                            // $('#content').val(response['output']['content']);
-                        }else{
-                            $('.ck-editor__editable p').html('')
-                        }
+                        // if(response['output']){
+                        //     // console.log(response['output']['content'])
+                        //     // $('.ck-editor__editable p').html(response['output']['content'])
+                        //     // $('#content').val(response['output']['content']);
+                        // }else{
+                        //     $('.ck-editor__editable p').html('')
+                        // }
                         
                     }
                     $('#loader').hide();

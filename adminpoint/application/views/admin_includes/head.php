@@ -34,13 +34,13 @@
     <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true" id="deleteModal"  data-bs-backdrop="static" data-bs-keyboard="false">
         <div class="modal-dialog modal-sm">
             <div class="modal-content text-center">
-                <div class="modal-header" style="padding-left: 35%;">
-                    <i class="fa fa-trash fa-5x text-danger"></i>
+                <div class="modal-header" style="padding-left: 40%;">
+                    <i class="fa fa-trash fa-4x text-danger"></i>
                 </div>
                 <div class="modal-body">
                     <h5>Are you sure?</h5>
                 </div>
-                <div class="modal-footer text-center">
+                <div class="modal-footer text-center" style="padding-right: 5em;">
                     <a href="" id="del_url" class="btn btn-danger btn-sm">Delete</a>
                     <button class="btn btn-default tbn-sm" data-bs-dismiss="modal">Cancel</button>
                 </div>
