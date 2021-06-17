@@ -27,7 +27,7 @@
                                             echo '<tr>';
                                             echo '<td>'.$i++.'</td>';
                                             echo '<td>'.$value['page'].'</td>';
-                                            echo '<td>'.$value['content'].'</td>';
+                                            echo '<td>'.substr($value['content'], 0, 100).'</td>';
                                             echo '<td>'.date('d-m-Y h:i:s A', strtotime($value['created_at'])).'</td>';
                                             echo '<td>'.date('d-m-Y h:i:s A', strtotime($value['updated_at'])).'</td>';
                                             echo '<td>
