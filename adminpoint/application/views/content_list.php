@@ -5,7 +5,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body table-responsive">
-                            <h4 class="card-title">Content list</h4>
+                            <h4 class="card-title">प्रकरण सूची</h4>
                             
                             <table id="datatable" class="table table-bordered nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                                 <thead>

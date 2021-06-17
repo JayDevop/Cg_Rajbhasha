@@ -6,11 +6,11 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title mb-3">Manage page content</h4>
+                                <h4 class="card-title mb-3">पेज प्रबंधित करें</h4>
                                 <div class="row mb-3">
                                     <div class="col-lg-12 form-group">
                                         <select name="pageid" id="pageid" class="form-control">
-                                            <option value="">-- Select Page --</option>
+                                            <option value="">-- पेग चुनें --</option>
                                             <?php if($pageList){
                                                 foreach($pageList as $value){
                                                     if(@$_POST['pageid'] == $value['id']){

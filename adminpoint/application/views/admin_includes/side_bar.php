@@ -34,35 +34,35 @@
                             <li>
                                 <a href="<?php echo base_url('admin-dashboard'); ?>">
                                     <i class="uil-home-alt"></i>
-                                    <span>Dashboard</span>
+                                    <span>डैशबोर्ड</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="<?php echo base_url('manage-pages'); ?>" class="waves-effect">
                                     <i class="uil-window-section"></i>
-                                    <span>Manage pages</span>
+                                    <span>पेज प्रबंधित करें </span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="<?php echo base_url('content-list'); ?>" class="waves-effect">
                                     <i class="uil-window-section"></i>
-                                    <span>Content list</span>
+                                    <span>प्रकरण सूची</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="<?php echo base_url('photo-gallery'); ?>">
                                     <i class="uil-photo-alt"></i>
-                                    <span>Photo Gallery</span>
+                                    <span>फोटो गैलरी</span>
                                 </a>
                             </li>
 
                             <li>
                                 <a href="<?php echo base_url('webinar-conduct'); ?>">
                                     <i class="uil-window-alt"></i>
-                                    <span>Conduct Webinar</span>
+                                    <span>वेबिनार आयोजित करें</span>
                                 </a>
                             </li>
 

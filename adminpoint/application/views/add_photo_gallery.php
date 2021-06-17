@@ -6,7 +6,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <h4 class="card-title mb-3">Photo Gallery</h4>
+                                <h4 class="card-title mb-3">फोटो गैलरी</h4>
                                 <div class="row mb-3">
                                     <div class="form-group row"><label class="col-sm-2 col-form-label"> फोटो का मुख्य शीर्षक </label>
                                         <div class="col-sm-10">

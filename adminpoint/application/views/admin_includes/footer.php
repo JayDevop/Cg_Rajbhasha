@@ -69,6 +69,8 @@
         <div class="rightbar-overlay"></div>
 
         <!-- JAVASCRIPT -->
+
+        <script> var base_url = '<?php echo base_url(); ?>'; </script>
         
         <script src="<?=base_url()?>assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="<?=base_url()?>assets/libs/metismenu/metisMenu.min.js"></script>
@@ -84,18 +86,60 @@
 
         <!-- ckeditor -->
         <script src="<?=base_url()?>assets/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
+        <script src="<?=base_url()?>assets/libs/ckfinder/ckfinder.js"></script>
 
         <script>
             if($("textarea").hasClass("classic-editor")){
                 ClassicEditor
-                .create( document.querySelector( '.classic-editor' ) )
-                .then( editor => {
-                    myEditor = editor;
+                .create( document.querySelector( '.classic-editor' ), {
+                    ckfinder: {
+                        uploadUrl: base_url+'adminpoint/assets/libs/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json',
+                    },
+                    // toolbar: [ 'ckfinder', 'imageUpload', '|', 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo' ]
+                    toolbar: [ 'ckfinder', '|', 'heading', '|', 'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQoute', 'outdent', 'indent', '|', 'insertTable', 'mediaEmbed', '|', 'undo', 'redo' ],
+                    heading: {
+                        options: [{
+                            model: 'paragraph',
+                            title: 'Paragraph',
+                            class: 'ck-heading_paragraph'
+                        },
+                        {
+                            model: 'heading1',
+                            view: 'h1',
+                            title: 'Heading 1',
+                            class: 'ck-heading_heading1'
+                        },
+                        {
+                            model: 'heading2',
+                            view: 'h2',
+                            title: 'Heading 2',
+                            class: 'ck-heading_heading2'
+                        },
+                        {
+                            model: 'heading3',
+                            view: 'h3',
+                            title: 'Heading 3',
+                            class: 'ck-heading_heading3'
+                        },
+                        {
+                            model: 'heading4',
+                            view: 'h4',
+                            title: 'Heading 4',
+                            class: 'ck-heading_heading4'
+                        },
+                        {
+                            model: 'heading5',
+                            view: 'h5',
+                            title: 'Heading 5',
+                            class: 'ck-heading_heading5'
+                        },
+                        ]
+                    },
+                    language: 'id'
                 } )
                 .catch( error => {
                     console.error( error );
                 } );
-                
             }
         </script>
 
