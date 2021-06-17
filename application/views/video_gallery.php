@@ -16,7 +16,7 @@
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
-                        <video width="350" controls>
+                        <video width="100%" controls>
                             <source src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" type="video/mp4">
                             <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
                             Your browser does not support HTML video.
@@ -29,7 +29,7 @@
                 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
-                        <video width="350" controls>
+                        <video width="100%" controls>
                             <source src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" type="video/mp4">
                             <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
                             Your browser does not support HTML video.
@@ -42,7 +42,7 @@
                 
                 <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                     <div class="member">
-                        <video width="350" controls>
+                        <video width="100%" controls>
                             <source src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" type="video/mp4">
                             <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
                             Your browser does not support HTML video.
