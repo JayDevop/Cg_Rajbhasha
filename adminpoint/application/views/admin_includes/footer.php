@@ -84,6 +84,40 @@
 
         <script src="<?=base_url()?>assets/js/pages/dashboard.init.js"></script>
 
+         <!-- toastr plugin -->
+         <script src="<?=base_url()?>assets/libs/toastr/build/toastr.min.js"></script>
+
+        <!-- toastr init -->
+        <script src="<?=base_url()?>assets/js/pages/toastr.init.js"></script>
+
+        <script>
+        <?php $data = $this->session->flashdata('responsemsg');
+        if($this->session->flashdata('responsemsg') && $data['Status']=='success'){
+            echo 'toastr["success"]("<div>'.$data['msg'].'</div>")';
+        }elseif($this->session->flashdata('responsemsg') && $data['Status']=='error'){
+            echo 'toastr["error"]("<div>'.$data['msg'].'</div>")';
+        } ?>
+            // toastr["success"]("<div>"+$data['msg']+"</div>");
+
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": true,
+                "progressBar": true,
+                "positionClass": "toast-top-right",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": 300,
+                "hideDuration": 1000,
+                "timeOut": 5000,
+                "extendedTimeOut": 1000,
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            }
+        </script>
+
         <!-- ckeditor -->
         <script src="<?=base_url()?>assets/libs/%40ckeditor/ckeditor5-build-classic/build/ckeditor.js"></script>
         <script src="<?=base_url()?>assets/libs/ckfinder/ckfinder.js"></script>

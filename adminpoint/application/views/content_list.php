@@ -5,7 +5,8 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <?php if($this->session->flashdata('responsemsg')){ ?>
+                    <?php if($this->session->flashdata('responsemsg') && $this->session->flashdata('responsemsg')['Status'] == 
+                    'error'){ ?>
                         <div class="alert alert-warning alert-dismissible fade show" role="alert">
                             <i class="fa fa-exclamation-triangle me-2"></i>
                             <?php echo $this->session->flashdata('responsemsg')['msg'] ?>
@@ -25,7 +26,7 @@
                                         <th>S.No.</th>
                                         <th>Page Name</th>
                                         <th>Content</th>
-                                        <th>Create At</th>
+                                        <th>Created At</th>
                                         <th>Updated At</th>
                                         <th>Action</th>
                                     </tr>

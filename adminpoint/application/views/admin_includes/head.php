@@ -11,6 +11,8 @@
         
         <!-- App favicon -->
         <link rel="shortcut icon" href="<?=base_url('../assets/img/logo.png')?>">
+        
+        <link rel="stylesheet" type="text/css" href="<?=base_url()?>assets/libs/toastr/build/toastr.min.css">
 
         <!-- Bootstrap Css -->
         <link href="<?=base_url()?>assets/css/bootstrap.min.css" id="bootstrap-style" rel="stylesheet" type="text/css" />
@@ -25,6 +27,7 @@
 
         <!-- Responsive datatable examples -->
         <link href="<?=base_url()?>assets/libs/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" /> 
+
 
         <script src="<?=base_url()?>assets/libs/jquery/jquery.min.js"></script>
 
