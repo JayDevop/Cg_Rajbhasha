@@ -25,6 +25,7 @@ class AdminDashboardController extends CI_Controller
     public function index()
     {
         //echo "ok";exit();
+        $data['title'] = 'डैशबोर्ड';
         $data['page_act'] = "home";
         $data['page_name'] = "home";
         $this->render_view('dashboard', $data);
@@ -79,7 +80,7 @@ class AdminDashboardController extends CI_Controller
     public function manage_pages(){
         $contentid = (isset($_GET['contentid']) && $_GET['contentid'] != '') ? $_GET['contentid'] : 0;
         $data = array();
-        $data['title'] = 'Manage page content | CG RajBhasha';
+        $data['title'] = 'पेज प्रबंधन';
         $js_page = "admin_includes/custom_js_page";
         if($this->input->server('REQUEST_METHOD')=="POST"){
             $this->form_validation->set_rules('pageid','Page', 'required|trim');
@@ -118,7 +119,7 @@ class AdminDashboardController extends CI_Controller
 
     public function content_list($delete = 0){
         $data = array();
-        $data['title'] = 'Content list | CG RajBhasha';
+        $data['title'] = 'प्रकरण सूची';
         if($delete){
             $data = array('is_deleted' => 1);
             $response = $this->AdminDashboardModel->contents(2, $delete, $data);
@@ -136,7 +137,7 @@ class AdminDashboardController extends CI_Controller
 
     public function photo_gallery(){
         $data = array();
-        $data['title'] = 'Photo Gallery Add | CG RajBhasha';
+        $data['title'] = 'फोटो गैलरी';
         $js_page = "admin_includes/custom_js_page";
         $data['photoList'] = $this->AdminDashboardModel->photo_gallery_list();
         $this->render_view('add_photo_gallery', $data, $js_page);
@@ -144,7 +145,7 @@ class AdminDashboardController extends CI_Controller
 
     public function webinar_conduct(){
         $data = array();
-        $data['title'] = 'Webinar Creation | CG RajBhasha';
+        $data['title'] = 'वेबिनार आयोजन';
         $js_page = "admin_includes/custom_js_page";
        // $data['photoList'] = $this->AdminDashboardModel->photo_gallery_list();
         $this->render_view('webinar_conduct_page', $data, $js_page);
