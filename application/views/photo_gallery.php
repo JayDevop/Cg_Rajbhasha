@@ -4,10 +4,10 @@
 <style>
   .gallery_img {
     width: 100%;
-    height: auto;
+    height: 500px;
     border-radius: 5px;
     cursor: pointer;
-    transition: .3s;
+    transition: .3s;    
 }
 </style>
     <!-- ======= Breadcrumbs ======= -->
@@ -25,7 +25,7 @@
 
       <div class="row">
         <?php
-
+  
     $count = sizeof($photoList);
     //print_r($photoList);exit();
     if ($count > 0) {
