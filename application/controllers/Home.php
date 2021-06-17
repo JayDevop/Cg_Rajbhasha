@@ -120,19 +120,19 @@ class Home extends MY_Controller {
     }
 
     public function seminar(){
-        $data['title'] = 'हमारे बारे में | छत्तीसगढ़ राजभाषा आयोग';
+        $data['title'] = 'सम्मेलन | छत्तीसगढ़ राजभाषा आयोग';
         $data['seminarContent'] = $this->Home_model->seminar();
         $this->render_view('seminar', $data);
     }
 
     public function publication(){
-        $data['title'] = 'हमारे बारे में | छत्तीसगढ़ राजभाषा आयोग';
+        $data['title'] = 'प्रकाशन | छत्तीसगढ़ राजभाषा आयोग';
         $data['publicationContent'] = $this->Home_model->publication();
         $this->render_view('publication', $data);
     }
 
     public function grant(){
-        $data['title'] = 'हमारे बारे में | छत्तीसगढ़ राजभाषा आयोग';
+        $data['title'] = 'अनुदान | छत्तीसगढ़ राजभाषा आयोग';
         $data['grantContent'] = $this->Home_model->grant();
         $this->render_view('grant', $data);
     }
