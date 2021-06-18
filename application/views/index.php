@@ -34,7 +34,7 @@
   <br>
   <div class="container-fluid" data-aos="fade-down">
   <div class="row">
-  <img src="./assets/img/Images/rajbhasha.png" class="d-block w-100" alt="b">
+  <img src="./assets/img/banner-resized-tiny.png" class="d-block w-100" alt="b">
   </div>
   </div>
    <!-- ======= Why Us Section ======= -->
