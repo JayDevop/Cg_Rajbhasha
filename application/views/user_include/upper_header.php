@@ -18,9 +18,9 @@
           <li class="dropdown"><a href="#"><span>प्रकाशन</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#"></a></li>
-              <li><a href="<?=base_url('#')?>">वर्ष 2019-2020</a></li>
-              <li><a href="<?=base_url('#')?>">वर्ष 2020-2021</a></li>
               <li><a href="<?=base_url('#')?>">वर्ष 2021-2022</a></li>
+              <li><a href="<?=base_url('#')?>">वर्ष 2020-2021</a></li>
+              <li><a href="<?=base_url('#')?>">वर्ष 2019-2020</a></li>
             </ul>
           </li>
           <li><a href="<?php echo base_url('grant'); ?>">अनुदान</a></li>
