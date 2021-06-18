@@ -6,6 +6,13 @@
     <div class="row">
 
       <div class="col-lg-3 col-md-6 footer-contact">
+        <h3></h3>
+        <p>
+          
+        </p>
+      </div>
+
+      <div class="col-lg-3 col-md-6 footer-contact">
         <h3>कार्यालय का पता</h3>
         <p>
           कार्यलय छत्तीसगढ़ राजभाषा आयोग,<br>
@@ -31,7 +38,7 @@
       </div>
 
       <div class="col-lg-3 col-md-6 footer-links">
-        <h4>Our Services</h4>
+        <h4>सामान्य जानकारी</h4>
         <div class="bottom_box">
           <ul>
             <!-- <li class="servertime"><span>आज का दिनांक: </span><span id="serverTime">07/06/2021 12:53:00 PM</span>
@@ -39,7 +46,7 @@
             <!-- <p>आज का दिनांक/Time: MM/DD/YYYY hh:mm<br>
             <?php echo(strftime("%m/%d/%Y %H:%M")); ?></p> -->
 
-            <p>आज का दिनांक/Time: &nbsp;<?php echo(strftime("%m/%d/%Y %H:%M")); ?></p>
+            <p>आज का दिनांक/समय: &nbsp;<?php echo(strftime("%m/%d/%Y %H:%M")); ?></p>
 
             <li class="countportlet">
               <div id="p_p_id_VisitorsCount_WAR_cgssdgportlet_INSTANCE_AccmXu70YbN5_"
