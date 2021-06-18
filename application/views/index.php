@@ -61,21 +61,21 @@
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-receipt"></i>
                     <h4>उद्देश्य 1</h4>
-                    <p><h5><strong style="color: green;">राजभाषा को संविधान की आठवीं अनुसूची में दर्जा दिलाना।</strong></h5></p>
+                    <p><h5><strong style="color: green;">छत्तीसगढ़ी को आठवीं अनुसूची में शामिल कराना ।</strong></h5></p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-cube-alt"></i>
                     <h4>उद्देश्य 2</h4>
-                    <p><h5><strong style="color: green;">छत्तीसगढ़ी भाषा को राजकाज की भाषा के उपयोग में लाना।</strong></h5></p>
+                    <p><h5><strong style="color: green;">छत्तीसगढ़ी भाषा को कार्यालयीन (राजकाज) उपयोग में लाना।</strong></h5></p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-text"></i>
                     <h4>उद्देश्य 3</h4>
-                    <p><h5><strong style="color: green;">त्रिभाषायी भाषा रूप में शामिल पाठ्यक्रम में शामिल करना।</strong></h5></p>
+                    <p><h5><strong style="color: green;">छत्तीसगढ़ी को त्रिभाषायी पाठ्यक्रम में शामिल कराना।</strong></h5></p>
                   </div>
                 </div>
               </div>
