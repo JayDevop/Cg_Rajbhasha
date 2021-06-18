@@ -4,7 +4,7 @@
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
       <!-- <h1 class="logo me-auto"><a href="<?php echo base_url(); ?>"><img src=<?=base_url('assets/img/rajbhasha-logo.png')?>>&nbsp;छत्तीसगढ़ राजभाषा आयोग</a></h1> -->
-      <h1 class="logo me-auto"><a href="<?php echo base_url(); ?>"><img src=<?=base_url('assets/img/rajbhasha-logo-tiny.png')?>></a></h1>
+      <h1 class="logo me-auto"><a href="<?php echo base_url(); ?>"><img src=<?=base_url('assets/img/rajbhasha-logo_new.png')?>></a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
