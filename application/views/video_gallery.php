@@ -14,44 +14,36 @@
         <div class="container" data-aos="fade-up">
 
             <div class="row" data-aos="zoom-in" data-aos-delay="100">
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+            <?php
+  
+    $count = sizeof($videoList);
+    //print_r($photoList);exit();
+    if ($count > 0) {
+      for ($i = 0; $i < $count; $i++) {
+        $filepath = "assets/uploads/video_gallery/"; ?>
+        <div class="col-lg-4 col-md-4 d-flex" style="height: 250px;">
                     <div class="member">
-                        <video width="100%" controls>
-                            <source src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" type="video/mp4">
+                        <video height="60%" width="100%" controls>
+                            <source src="<?php echo $filepath.$videoList[$i]["uploaded_file_name"]; ?>" type="video/mp4">
                             <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
-                            Your browser does not support HTML video.
                         </video>
                         <div class="member-content">
-                            <p>Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus</p>
+                            <p><strong><h5><?php echo $videoList[$i]["caption_name"]; ?></strong></h5>
+                           <?php 
+                            $date = $videoList[$i]["posted_on"];
+                            $date = strtotime($date);
+                            echo "uploaded on - " .date('l, d-M-Y h:i:s', $date);?></p>
                         </div>
                     </div>
                 </div>
+        <?php }
+        }
+         ?>
                 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                    <div class="member">
-                        <video width="100%" controls>
-                            <source src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" type="video/mp4">
-                            <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
-                            Your browser does not support HTML video.
-                        </video>
-                        <div class="member-content">
-                            <p>Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus</p>
-                        </div>
-                    </div>
-                </div>
                 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
-                    <div class="member">
-                        <video width="100%" controls>
-                            <source src="https://codingyaar.com/wp-content/uploads/video-in-bootstrap-card.mp4" type="video/mp4">
-                            <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
-                            Your browser does not support HTML video.
-                        </video>
-                        <div class="member-content">
-                            <p>Repellat fugiat adipisci nemo illum nesciunt voluptas repellendus. In architecto rerum rerum temporibus</p>
-                        </div>
-                    </div>
-                </div>
+               
+                
+                
             </div>
         </div>
     </section><!-- End Events Section -->

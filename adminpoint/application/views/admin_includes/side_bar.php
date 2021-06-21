@@ -58,6 +58,14 @@
                                     <span>फोटो गैलरी</span>
                                 </a>
                             </li>
+                            
+                            <li>
+                                <a href="<?php echo base_url('video-gallery'); ?>">
+                                    <i class="uil-photo-alt"></i>
+                                    <span>वीडियो गैलरी</span>    
+                                </a>
+                            </li>
+
 
                             <li>
                                 <a href="<?php echo base_url('webinar-conduct'); ?>">
