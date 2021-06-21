@@ -84,4 +84,30 @@
             return true;
         }
     });
+    $(document).on('submit', '#video-gallery-form', function(e){
+        var flag = true;
+        if($('#caption_name').val() == '' || $('#caption_name').val() == 0){
+            $('#caption_name').addClass('is-invalid');
+            $('#caption_name~span').text('कृपया वीडियो का मुख्य शीर्षक दर्ज करें');
+            flag = false;
+        }else{
+            $('#caption_name').removeClass('is-invalid');
+            $('#caption_name~span').text('');
+        }
+
+        if($('#customFile').val() == '' || $('#customFile').val() == 0){
+            $('#customFile').addClass('is-invalid');
+            $('#customFile~span').text('कृपया वीडियो अपलोड करें');
+            flag = false;
+        }else{
+            $('#customFile').removeClass('is-invalid');
+            $('#customFile~span').text('');
+        }
+
+        if(flag == false){
+            e.preventDefault();
+        }else{
+            return true;
+        }
+    });
  </script>

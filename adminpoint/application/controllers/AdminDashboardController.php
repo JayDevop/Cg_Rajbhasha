@@ -63,7 +63,7 @@ class AdminDashboardController extends CI_Controller
         $sts = $this->AdminDashboardModel->photo_gallery_upload_insert($pGalleryData, $photo_file_response);
 
         if ($sts) {
-            echo "<script>alert('Photo Gallery Uploaded succesfully..')</script>";
+            echo "<script>alert('Photo Uploaded succesfully..')</script>";
         } else {
             echo "<script>alert('Try Again.');</script>";
         }
@@ -143,6 +143,14 @@ class AdminDashboardController extends CI_Controller
         $this->render_view('add_photo_gallery', $data, $js_page);
     }
 
+    public function video_gallery(){
+        $data = array();
+        $data['title'] = 'वीडियो गैलरी';
+        $js_page = "admin_includes/custom_js_page";
+        $data['photoList'] = $this->AdminDashboardModel->photo_gallery_list();
+        $this->render_view('add_video_gallery', $data, $js_page);
+    }
+
     public function webinar_conduct(){
         $data = array();
         $data['title'] = 'वेबिनार आयोजन';
@@ -176,6 +184,52 @@ class AdminDashboardController extends CI_Controller
         }
     }
 
+    public function video_upload_insert()
+    {
+        $js_page = "admin_includes/custom_js_page";
+        $vGalleryData['caption_name'] = $_POST['caption_name'];
+        $vGalleryData['original_file_name'] = $_FILES['file']['name'][0];
+        $vGalleryData['user_id'] = $this->session->userdata('user_id');
+        $vGalleryData['system_ip'] = $_SERVER['SERVER_ADDR'];
+
+        if (!empty($_FILES)) {
+            if (!file_exists($this->upload_url . "assets/uploads")) {
+
+                mkdir($this->upload_url . "assets/uploads", 0777);
+            }
+            $file_directory = $this->upload_url . "assets/uploads/video_gallery";
+
+            if (!file_exists($file_directory)) {
+                mkdir($file_directory);
+            }
+            $name = "file";
+            $path = $file_directory;
+            $file_response = $this->video_upload($name, $path);
+            if ($file_response['sts'] == 0) {
+             //print_r($photo_file_response[0]);exit;
+                echo "<script>alert($file_response[0])</script>";
+                echo "<script>alert('कृपया वीडियो फाईल 2MB तक का अपलोड करें|')</script>";
+                echo "<script>location.replace(document.referrer)</script>";
+                exit();
+            }
+        $sts = FALSE;
+        $sts = $this->AdminDashboardModel->video_gallery_upload_insert($vGalleryData, $file_response);
+
+        if ($sts) {
+            echo "<script>alert('Video Uploaded succesfully..')</script>";
+        } else {
+            echo "<script>alert('Try Again.');</script>";
+        }
+        echo "<script>location.replace(document.referrer);</script>";
+
+        } else {
+            echo "<script>alert('कृपया वीडियो अपलोड करे|')</script>";
+            echo "<script>location.replace(document.referrer)</script>";
+            exit();
+        }
+        
+    }
+
     public function upload($name, $path)
     {
         // echo "hi";exit;     
@@ -200,6 +254,53 @@ class AdminDashboardController extends CI_Controller
                 // $config['allowed_types'] = 'pdf'; 
                 $config['detect_mime']  = TRUE;
                // $config['max_size']    = 200;       
+                // $config['max_width'] = '1024'; 
+                // $config['max_height'] = '768';   
+                //echo $_FILES['file']['type'];exit;
+
+                // Load and initialize upload library 
+                $this->load->library('upload', $config);
+                $this->upload->initialize($config);
+
+                // Upload file to server 
+                if ($this->upload->do_upload('file')) {
+                    // Uploaded file data 
+
+                    $fileData[$i] = $this->upload->data();
+                    $fileData['sts'] = 1;
+                } else {
+
+                    $fileData[$i] = $this->upload->display_errors();
+                    $fileData['sts'] = 0;
+                }
+            }
+        }
+        return $fileData;
+    }
+    public function video_upload($name, $path)
+    {
+        // echo "hi";exit;     
+        $fileData = array();
+        if (!empty($_FILES[$name]['name']) && count(array_filter($_FILES[$name]['name'])) > 0) {
+            $filesCount = count($_FILES[$name]['name']);
+
+            for ($i = 0; $i < $filesCount; $i++) {
+
+                $tmpname = explode(".",$_FILES[$name]['name'][$i]);
+                $fname= $tmpname[0]."_".uniqid().".".$tmpname[1];
+                $_FILES['file']['name']     =  $fname;
+                $_FILES['file']['type']     = $_FILES[$name]['type'][$i];
+                $_FILES['file']['tmp_name'] = $_FILES[$name]['tmp_name'][$i];
+                $_FILES['file']['error']     = $_FILES[$name]['error'][$i];
+                $_FILES['file']['size']     = $_FILES[$name]['size'][$i];
+
+                // File upload configuration 
+                $uploadPath = $path;
+                $config['upload_path'] = $uploadPath;
+                $config['allowed_types'] = 'avi|mp4|3gp|mpeg|mpg|mov|mp3|flv|wmv';
+                // $config['allowed_types'] = 'pdf'; 
+                $config['detect_mime']  = TRUE;
+                $config['max_size']    = 2000000;       
                 // $config['max_width'] = '1024'; 
                 // $config['max_height'] = '768';   
                 //echo $_FILES['file']['type'];exit;

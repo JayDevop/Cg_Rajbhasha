@@ -18,6 +18,7 @@ class AdminDashboardModel extends CI_Model
             $count = sizeof($photo_file_response);
             if ($count > 0) {
                 $parameters = array(
+                    'fk_file_type' => 1, // 1 for Image Types
                     'caption_name' => $pGalleryData['caption_name'],
                     'original_file_name' => $pGalleryData['original_file_name'],
                     'uploaded_file_name' => $photo_file_response[0]['file_name'],
@@ -115,4 +116,42 @@ class AdminDashboardModel extends CI_Model
         }
     }
     /* Page list */
+
+   /* Video Gallery Upload.*/
+   public function video_gallery_upload_insert($vGalleryData, $video_file_response)
+   {
+       //print_r($tender_file[0]);exit();
+       if ($video_file_response != null && $video_file_response != '') {
+           $this->db->trans_begin();
+           $count = sizeof($video_file_response);
+           if ($count > 0) {
+               $parameters = array(
+                   'fk_file_type' => 2, // 2 for Video Types
+                   'caption_name' => $vGalleryData['caption_name'],
+                   'original_file_name' => $vGalleryData['original_file_name'],
+                   'uploaded_file_name' => $video_file_response[0]['file_name'],
+                   'file_url' => $video_file_response[0]['full_path'],
+                   'file_type' => $video_file_response[0]['file_type'],
+                   'file_size' => $video_file_response[0]['file_size'],
+                   'ip_address' => $vGalleryData['system_ip'],
+                   'created_by' => $vGalleryData['user_id']
+               );
+
+               $this->db->insert('tbl_photo_gallery', $parameters);
+               //echo $this->db->last_query();exit();
+               // exit;
+           }
+       }
+       $sts = FALSE;
+       if ($this->db->trans_status() === FALSE) {
+           $this->db->trans_rollback();
+       } else {
+           $this->db->trans_commit();
+           $sts = TRUE;
+       }
+       return $sts;
+   }
+   /* Video Gallery Upload */ 
+
+    
 }
